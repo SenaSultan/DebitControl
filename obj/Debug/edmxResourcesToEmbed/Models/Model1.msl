@@ -1,0 +1,694 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DebitControlModelStoreContainer" CdmEntityContainer="DebitControlEntities">
+    <EntitySetMapping Name="Administrator">
+      <EntityTypeMapping TypeName="DebitControlModel.Administrator">
+        <MappingFragment StoreEntitySet="Administrator">
+          <ScalarProperty Name="administratorId" ColumnName="administratorId" />
+          <ScalarProperty Name="administratorName" ColumnName="administratorName" />
+          <ScalarProperty Name="administratorSurname" ColumnName="administratorSurname" />
+          <ScalarProperty Name="administratorUsername" ColumnName="administratorUsername" />
+          <ScalarProperty Name="administratorPassword" ColumnName="administratorPassword" />
+          <ScalarProperty Name="administratorRole" ColumnName="administratorRole" />
+          <ScalarProperty Name="administratorTitle" ColumnName="administratorTitle" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Computer">
+      <EntityTypeMapping TypeName="DebitControlModel.Computer">
+        <MappingFragment StoreEntitySet="Computer">
+          <ScalarProperty Name="computerId" ColumnName="computerId" />
+          <ScalarProperty Name="computerBrand" ColumnName="computerBrand" />
+          <ScalarProperty Name="computerModel" ColumnName="computerModel" />
+          <ScalarProperty Name="computerName" ColumnName="computerName" />
+          <ScalarProperty Name="computerSerialNumber" ColumnName="computerSerialNumber" />
+          <ScalarProperty Name="computerLanMac" ColumnName="computerLanMac" />
+          <ScalarProperty Name="computerWifiMac" ColumnName="computerWifiMac" />
+          <ScalarProperty Name="computerWin" ColumnName="computerWin" />
+          <ScalarProperty Name="computerOffice" ColumnName="computerOffice" />
+          <ScalarProperty Name="computerNumber" ColumnName="computerNumber" />
+          <ScalarProperty Name="computerUsbStatus" ColumnName="computerUsbStatus" />
+          <ScalarProperty Name="computerStatus" ColumnName="computerStatus" />
+          <ScalarProperty Name="licenceId" ColumnName="licenceId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DebitComputer">
+      <EntityTypeMapping TypeName="DebitControlModel.DebitComputer">
+        <MappingFragment StoreEntitySet="DebitComputer">
+          <ScalarProperty Name="debitComputerId" ColumnName="debitComputerId" />
+          <ScalarProperty Name="debitComputerStartdate" ColumnName="debitComputerStartdate" />
+          <ScalarProperty Name="debitComputerFinishdate" ColumnName="debitComputerFinishdate" />
+          <ScalarProperty Name="employeeId" ColumnName="employeeId" />
+          <ScalarProperty Name="computerId" ColumnName="computerId" />
+          <ScalarProperty Name="debitComputerStatus" ColumnName="debitComputerStatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DebitDevice">
+      <EntityTypeMapping TypeName="DebitControlModel.DebitDevice">
+        <MappingFragment StoreEntitySet="DebitDevice">
+          <ScalarProperty Name="debitDeviceId" ColumnName="debitDeviceId" />
+          <ScalarProperty Name="debitDeviceStartdate" ColumnName="debitDeviceStartdate" />
+          <ScalarProperty Name="debitDeviceFinishdate" ColumnName="debitDeviceFinishdate" />
+          <ScalarProperty Name="debitDeviceStatus" ColumnName="debitDeviceStatus" />
+          <ScalarProperty Name="employeeId" ColumnName="employeeId" />
+          <ScalarProperty Name="deviceId" ColumnName="deviceId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Department">
+      <EntityTypeMapping TypeName="DebitControlModel.Department">
+        <MappingFragment StoreEntitySet="Department">
+          <ScalarProperty Name="departmentId" ColumnName="departmentId" />
+          <ScalarProperty Name="departmentName" ColumnName="departmentName" />
+          <ScalarProperty Name="locationName" ColumnName="locationName" />
+          <ScalarProperty Name="departmentStatus" ColumnName="departmentStatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Device">
+      <EntityTypeMapping TypeName="DebitControlModel.Device">
+        <MappingFragment StoreEntitySet="Device">
+          <ScalarProperty Name="deviceId" ColumnName="deviceId" />
+          <ScalarProperty Name="deviceType" ColumnName="deviceType" />
+          <ScalarProperty Name="deviceBrand" ColumnName="deviceBrand" />
+          <ScalarProperty Name="deviceModel" ColumnName="deviceModel" />
+          <ScalarProperty Name="deviceSerialNumber" ColumnName="deviceSerialNumber" />
+          <ScalarProperty Name="deviceNumber" ColumnName="deviceNumber" />
+          <ScalarProperty Name="deviceStatus" ColumnName="deviceStatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Employee">
+      <EntityTypeMapping TypeName="DebitControlModel.Employee">
+        <MappingFragment StoreEntitySet="Employee">
+          <ScalarProperty Name="employeeId" ColumnName="employeeId" />
+          <ScalarProperty Name="employeeName" ColumnName="employeeName" />
+          <ScalarProperty Name="employeeSurname" ColumnName="employeeSurname" />
+          <ScalarProperty Name="employeeUsername" ColumnName="employeeUsername" />
+          <ScalarProperty Name="employeeStatus" ColumnName="employeeStatus" />
+          <ScalarProperty Name="departmentId" ColumnName="departmentId" />
+          <ScalarProperty Name="mailId" ColumnName="mailId" />
+          <ScalarProperty Name="employeeTitle" ColumnName="employeeTitle" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="License">
+      <EntityTypeMapping TypeName="DebitControlModel.License">
+        <MappingFragment StoreEntitySet="License">
+          <ScalarProperty Name="licenceId" ColumnName="licenceId" />
+          <ScalarProperty Name="licenceName" ColumnName="licenceName" />
+          <ScalarProperty Name="licenceKey" ColumnName="licenceKey" />
+          <ScalarProperty Name="licenceMail" ColumnName="licenceMail" />
+          <ScalarProperty Name="licencePassword" ColumnName="licencePassword" />
+          <ScalarProperty Name="licenceStatus" ColumnName="licenceStatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Mail">
+      <EntityTypeMapping TypeName="DebitControlModel.Mail">
+        <MappingFragment StoreEntitySet="Mail">
+          <ScalarProperty Name="mailId" ColumnName="mailId" />
+          <ScalarProperty Name="mailName" ColumnName="mailName" />
+          <ScalarProperty Name="mailPassword" ColumnName="mailPassword" />
+          <ScalarProperty Name="mailStatus" ColumnName="mailStatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="DebitControlModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="terminatedLicence">
+      <EntityTypeMapping TypeName="DebitControlModel.terminatedLicence">
+        <MappingFragment StoreEntitySet="terminatedLicence">
+          <ScalarProperty Name="licenseId" ColumnName="licenseId" />
+          <ScalarProperty Name="licenseName" ColumnName="licenseName" />
+          <ScalarProperty Name="obtainedFrom" ColumnName="obtainedFrom" />
+          <ScalarProperty Name="obtainedDate" ColumnName="obtainedDate" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="licencepassword" ColumnName="licencepassword" />
+          <ScalarProperty Name="licenceCode" ColumnName="licenceCode" />
+          <ScalarProperty Name="issuedPerson" ColumnName="issuedPerson" />
+          <ScalarProperty Name="issuedDepartment" ColumnName="issuedDepartment" />
+          <ScalarProperty Name="licenceDuration" ColumnName="licenceDuration" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="terminatedLicence_Log">
+      <EntityTypeMapping TypeName="DebitControlModel.terminatedLicence_Log">
+        <MappingFragment StoreEntitySet="terminatedLicence_Log">
+          <ScalarProperty Name="logId" ColumnName="logId" />
+          <ScalarProperty Name="actionType" ColumnName="actionType" />
+          <ScalarProperty Name="licenseId" ColumnName="licenseId" />
+          <ScalarProperty Name="licenseName" ColumnName="licenseName" />
+          <ScalarProperty Name="obtainedFrom" ColumnName="obtainedFrom" />
+          <ScalarProperty Name="obtainedDate" ColumnName="obtainedDate" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="licencepassword" ColumnName="licencepassword" />
+          <ScalarProperty Name="licenceCode" ColumnName="licenceCode" />
+          <ScalarProperty Name="issuedPerson" ColumnName="issuedPerson" />
+          <ScalarProperty Name="issuedDepartment" ColumnName="issuedDepartment" />
+          <ScalarProperty Name="licenceDuration" ColumnName="licenceDuration" />
+          <ScalarProperty Name="logDate" ColumnName="logDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionName="DebitControlModel.Store.GetActiveComputers" FunctionImportName="GetActiveComputers">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DebitControlModel.GetActiveComputers_Result">
+          <ScalarProperty Name="computerId" ColumnName="computerId" />
+          <ScalarProperty Name="computerBrand" ColumnName="computerBrand" />
+          <ScalarProperty Name="computerModel" ColumnName="computerModel" />
+          <ScalarProperty Name="computerName" ColumnName="computerName" />
+          <ScalarProperty Name="computerSerialNumber" ColumnName="computerSerialNumber" />
+          <ScalarProperty Name="computerLanMac" ColumnName="computerLanMac" />
+          <ScalarProperty Name="computerWifiMac" ColumnName="computerWifiMac" />
+          <ScalarProperty Name="computerWin" ColumnName="computerWin" />
+          <ScalarProperty Name="computerOffice" ColumnName="computerOffice" />
+          <ScalarProperty Name="computerNumber" ColumnName="computerNumber" />
+          <ScalarProperty Name="computerUsbStatus" ColumnName="computerUsbStatus" />
+          <ScalarProperty Name="computerStatus" ColumnName="computerStatus" />
+          <ScalarProperty Name="licenceId" ColumnName="licenceId" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="DebitControlModel.Store.GetActiveDebitComputer" FunctionImportName="GetActiveDebitComputer">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DebitControlModel.GetActiveDebitComputer_Result">
+          <ScalarProperty Name="departmentId" ColumnName="departmentId" />
+          <ScalarProperty Name="departmentName" ColumnName="departmentName" />
+          <ScalarProperty Name="locationName" ColumnName="locationName" />
+          <ScalarProperty Name="employeeId" ColumnName="employeeId" />
+          <ScalarProperty Name="employeeName" ColumnName="employeeName" />
+          <ScalarProperty Name="employeeSurname" ColumnName="employeeSurname" />
+          <ScalarProperty Name="employeeUsername" ColumnName="employeeUsername" />
+          <ScalarProperty Name="employeeStatus" ColumnName="employeeStatus" />
+          <ScalarProperty Name="computerId" ColumnName="computerId" />
+          <ScalarProperty Name="computerBrand" ColumnName="computerBrand" />
+          <ScalarProperty Name="computerModel" ColumnName="computerModel" />
+          <ScalarProperty Name="computerName" ColumnName="computerName" />
+          <ScalarProperty Name="computerSerialNumber" ColumnName="computerSerialNumber" />
+          <ScalarProperty Name="computerLanMac" ColumnName="computerLanMac" />
+          <ScalarProperty Name="computerWifiMac" ColumnName="computerWifiMac" />
+          <ScalarProperty Name="computerWin" ColumnName="computerWin" />
+          <ScalarProperty Name="computerNumber" ColumnName="computerNumber" />
+          <ScalarProperty Name="computerUsbStatus" ColumnName="computerUsbStatus" />
+          <ScalarProperty Name="computerStatus" ColumnName="computerStatus" />
+          <ScalarProperty Name="debitComputerId" ColumnName="debitComputerId" />
+          <ScalarProperty Name="debitComputerStartdate" ColumnName="debitComputerStartdate" />
+          <ScalarProperty Name="debitComputerFinishdate" ColumnName="debitComputerFinishdate" />
+          <ScalarProperty Name="debitComputerStatus" ColumnName="debitComputerStatus" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="DebitControlModel.Store.GetActiveDebitComputerByComputerId" FunctionImportName="GetActiveDebitComputerByComputerId">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DebitControlModel.GetActiveDebitComputerByComputerId_Result">
+          <ScalarProperty Name="departmentId" ColumnName="departmentId" />
+          <ScalarProperty Name="departmentName" ColumnName="departmentName" />
+          <ScalarProperty Name="locationName" ColumnName="locationName" />
+          <ScalarProperty Name="employeeId" ColumnName="employeeId" />
+          <ScalarProperty Name="employeeName" ColumnName="employeeName" />
+          <ScalarProperty Name="employeeSurname" ColumnName="employeeSurname" />
+          <ScalarProperty Name="employeeUsername" ColumnName="employeeUsername" />
+          <ScalarProperty Name="employeeStatus" ColumnName="employeeStatus" />
+          <ScalarProperty Name="computerId" ColumnName="computerId" />
+          <ScalarProperty Name="computerBrand" ColumnName="computerBrand" />
+          <ScalarProperty Name="computerModel" ColumnName="computerModel" />
+          <ScalarProperty Name="computerName" ColumnName="computerName" />
+          <ScalarProperty Name="computerSerialNumber" ColumnName="computerSerialNumber" />
+          <ScalarProperty Name="computerLanMac" ColumnName="computerLanMac" />
+          <ScalarProperty Name="computerWifiMac" ColumnName="computerWifiMac" />
+          <ScalarProperty Name="computerWin" ColumnName="computerWin" />
+          <ScalarProperty Name="computerNumber" ColumnName="computerNumber" />
+          <ScalarProperty Name="computerUsbStatus" ColumnName="computerUsbStatus" />
+          <ScalarProperty Name="computerStatus" ColumnName="computerStatus" />
+          <ScalarProperty Name="debitComputerId" ColumnName="debitComputerId" />
+          <ScalarProperty Name="debitComputerStartdate" ColumnName="debitComputerStartdate" />
+          <ScalarProperty Name="debitComputerFinishdate" ColumnName="debitComputerFinishdate" />
+          <ScalarProperty Name="debitComputerStatus" ColumnName="debitComputerStatus" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="DebitControlModel.Store.GetActiveDebitDevice" FunctionImportName="GetActiveDebitDevice">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DebitControlModel.GetActiveDebitDevice_Result">
+          <ScalarProperty Name="departmentId" ColumnName="departmentId" />
+          <ScalarProperty Name="departmentName" ColumnName="departmentName" />
+          <ScalarProperty Name="locationName" ColumnName="locationName" />
+          <ScalarProperty Name="employeeId" ColumnName="employeeId" />
+          <ScalarProperty Name="employeeName" ColumnName="employeeName" />
+          <ScalarProperty Name="employeeSurname" ColumnName="employeeSurname" />
+          <ScalarProperty Name="employeeUsername" ColumnName="employeeUsername" />
+          <ScalarProperty Name="employeeStatus" ColumnName="employeeStatus" />
+          <ScalarProperty Name="deviceId" ColumnName="deviceId" />
+          <ScalarProperty Name="deviceType" ColumnName="deviceType" />
+          <ScalarProperty Name="deviceBrand" ColumnName="deviceBrand" />
+          <ScalarProperty Name="deviceModel" ColumnName="deviceModel" />
+          <ScalarProperty Name="deviceSerialNumber" ColumnName="deviceSerialNumber" />
+          <ScalarProperty Name="deviceNumber" ColumnName="deviceNumber" />
+          <ScalarProperty Name="deviceStatus" ColumnName="deviceStatus" />
+          <ScalarProperty Name="debitDeviceId" ColumnName="debitDeviceId" />
+          <ScalarProperty Name="debitDeviceStartdate" ColumnName="debitDeviceStartdate" />
+          <ScalarProperty Name="debitDeviceFinishdate" ColumnName="debitDeviceFinishdate" />
+          <ScalarProperty Name="debitDeviceStatus" ColumnName="debitDeviceStatus" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="DebitControlModel.Store.GetActiveDebitDeviceByDeviceId" FunctionImportName="GetActiveDebitDeviceByDeviceId">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DebitControlModel.GetActiveDebitDeviceByDeviceId_Result">
+          <ScalarProperty Name="departmentId" ColumnName="departmentId" />
+          <ScalarProperty Name="departmentName" ColumnName="departmentName" />
+          <ScalarProperty Name="locationName" ColumnName="locationName" />
+          <ScalarProperty Name="employeeId" ColumnName="employeeId" />
+          <ScalarProperty Name="employeeName" ColumnName="employeeName" />
+          <ScalarProperty Name="employeeSurname" ColumnName="employeeSurname" />
+          <ScalarProperty Name="employeeUsername" ColumnName="employeeUsername" />
+          <ScalarProperty Name="employeeStatus" ColumnName="employeeStatus" />
+          <ScalarProperty Name="deviceId" ColumnName="deviceId" />
+          <ScalarProperty Name="deviceType" ColumnName="deviceType" />
+          <ScalarProperty Name="deviceBrand" ColumnName="deviceBrand" />
+          <ScalarProperty Name="deviceModel" ColumnName="deviceModel" />
+          <ScalarProperty Name="deviceSerialNumber" ColumnName="deviceSerialNumber" />
+          <ScalarProperty Name="deviceNumber" ColumnName="deviceNumber" />
+          <ScalarProperty Name="deviceStatus" ColumnName="deviceStatus" />
+          <ScalarProperty Name="debitDeviceId" ColumnName="debitDeviceId" />
+          <ScalarProperty Name="debitDeviceStartdate" ColumnName="debitDeviceStartdate" />
+          <ScalarProperty Name="debitDeviceFinishdate" ColumnName="debitDeviceFinishdate" />
+          <ScalarProperty Name="debitDeviceStatus" ColumnName="debitDeviceStatus" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="DebitControlModel.Store.GetActiveDevices" FunctionImportName="GetActiveDevices">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DebitControlModel.GetActiveDevices_Result">
+          <ScalarProperty Name="deviceId" ColumnName="deviceId" />
+          <ScalarProperty Name="deviceType" ColumnName="deviceType" />
+          <ScalarProperty Name="deviceBrand" ColumnName="deviceBrand" />
+          <ScalarProperty Name="deviceModel" ColumnName="deviceModel" />
+          <ScalarProperty Name="deviceSerialNumber" ColumnName="deviceSerialNumber" />
+          <ScalarProperty Name="deviceNumber" ColumnName="deviceNumber" />
+          <ScalarProperty Name="deviceStatus" ColumnName="deviceStatus" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="DebitControlModel.Store.GetActiveEmployees" FunctionImportName="GetActiveEmployees">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DebitControlModel.GetActiveEmployees_Result">
+          <ScalarProperty Name="employeeId" ColumnName="employeeId" />
+          <ScalarProperty Name="employeeName" ColumnName="employeeName" />
+          <ScalarProperty Name="employeeSurname" ColumnName="employeeSurname" />
+          <ScalarProperty Name="employeeUsername" ColumnName="employeeUsername" />
+          <ScalarProperty Name="employeeStatus" ColumnName="employeeStatus" />
+          <ScalarProperty Name="departmentId" ColumnName="departmentId" />
+          <ScalarProperty Name="mailId" ColumnName="mailId" />
+          <ScalarProperty Name="mailName" ColumnName="mailName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="DebitControlModel.Store.GetAllComputerRecords" FunctionImportName="GetAllComputerRecords">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DebitControlModel.GetAllComputerRecords_Result">
+          <ScalarProperty Name="computerId" ColumnName="computerId" />
+          <ScalarProperty Name="computerBrand" ColumnName="computerBrand" />
+          <ScalarProperty Name="computerModel" ColumnName="computerModel" />
+          <ScalarProperty Name="computerName" ColumnName="computerName" />
+          <ScalarProperty Name="computerSerialNumber" ColumnName="computerSerialNumber" />
+          <ScalarProperty Name="computerLanMac" ColumnName="computerLanMac" />
+          <ScalarProperty Name="computerWifiMac" ColumnName="computerWifiMac" />
+          <ScalarProperty Name="computerWin" ColumnName="computerWin" />
+          <ScalarProperty Name="computerOffice" ColumnName="computerOffice" />
+          <ScalarProperty Name="computerNumber" ColumnName="computerNumber" />
+          <ScalarProperty Name="computerUsbStatus" ColumnName="computerUsbStatus" />
+          <ScalarProperty Name="computerStatus" ColumnName="computerStatus" />
+          <ScalarProperty Name="licenceId" ColumnName="licenceId" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="DebitControlModel.Store.GetAllDebitComputerRecords" FunctionImportName="GetAllDebitComputerRecords">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DebitControlModel.GetAllDebitComputerRecords_Result">
+          <ScalarProperty Name="debitComputerId" ColumnName="debitComputerId" />
+          <ScalarProperty Name="debitComputerStartdate" ColumnName="debitComputerStartdate" />
+          <ScalarProperty Name="debitComputerFinishdate" ColumnName="debitComputerFinishdate" />
+          <ScalarProperty Name="employeeId" ColumnName="employeeId" />
+          <ScalarProperty Name="computerId" ColumnName="computerId" />
+          <ScalarProperty Name="debitComputerStatus" ColumnName="debitComputerStatus" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="DebitControlModel.Store.GetAllDebitDeviceRecords" FunctionImportName="GetAllDebitDeviceRecords">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DebitControlModel.GetAllDebitDeviceRecords_Result">
+          <ScalarProperty Name="debitDeviceId" ColumnName="debitDeviceId" />
+          <ScalarProperty Name="debitDeviceStartdate" ColumnName="debitDeviceStartdate" />
+          <ScalarProperty Name="debitDeviceFinishdate" ColumnName="debitDeviceFinishdate" />
+          <ScalarProperty Name="debitDeviceStatus" ColumnName="debitDeviceStatus" />
+          <ScalarProperty Name="employeeId" ColumnName="employeeId" />
+          <ScalarProperty Name="deviceId" ColumnName="deviceId" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="DebitControlModel.Store.GetAllDebitDevices" FunctionImportName="GetAllDebitDevices">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DebitControlModel.GetAllDebitDevices_Result">
+          <ScalarProperty Name="debitDeviceId" ColumnName="debitDeviceId" />
+          <ScalarProperty Name="debitDeviceStartdate" ColumnName="debitDeviceStartdate" />
+          <ScalarProperty Name="debitDeviceFinishdate" ColumnName="debitDeviceFinishdate" />
+          <ScalarProperty Name="debitDeviceStatus" ColumnName="debitDeviceStatus" />
+          <ScalarProperty Name="employeeId" ColumnName="employeeId" />
+          <ScalarProperty Name="deviceId" ColumnName="deviceId" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="DebitControlModel.Store.GetAllDepartmentRecords" FunctionImportName="GetAllDepartmentRecords">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DebitControlModel.GetAllDepartmentRecords_Result">
+          <ScalarProperty Name="departmentId" ColumnName="departmentId" />
+          <ScalarProperty Name="departmentName" ColumnName="departmentName" />
+          <ScalarProperty Name="locationName" ColumnName="locationName" />
+          <ScalarProperty Name="departmentStatus" ColumnName="departmentStatus" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="DebitControlModel.Store.GetAllDeviceRecords" FunctionImportName="GetAllDeviceRecords">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DebitControlModel.GetAllDeviceRecords_Result">
+          <ScalarProperty Name="deviceId" ColumnName="deviceId" />
+          <ScalarProperty Name="deviceType" ColumnName="deviceType" />
+          <ScalarProperty Name="deviceBrand" ColumnName="deviceBrand" />
+          <ScalarProperty Name="deviceModel" ColumnName="deviceModel" />
+          <ScalarProperty Name="deviceSerialNumber" ColumnName="deviceSerialNumber" />
+          <ScalarProperty Name="deviceNumber" ColumnName="deviceNumber" />
+          <ScalarProperty Name="deviceStatus" ColumnName="deviceStatus" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="DebitControlModel.Store.GetAllEmployeeRecords" FunctionImportName="GetAllEmployeeRecords">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DebitControlModel.GetAllEmployeeRecords_Result">
+          <ScalarProperty Name="employeeId" ColumnName="employeeId" />
+          <ScalarProperty Name="employeeName" ColumnName="employeeName" />
+          <ScalarProperty Name="employeeSurname" ColumnName="employeeSurname" />
+          <ScalarProperty Name="employeeUsername" ColumnName="employeeUsername" />
+          <ScalarProperty Name="employeeStatus" ColumnName="employeeStatus" />
+          <ScalarProperty Name="departmentId" ColumnName="departmentId" />
+          <ScalarProperty Name="mailId" ColumnName="mailId" />
+          <ScalarProperty Name="mailName" ColumnName="mailName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="DebitControlModel.Store.GetAllLicenceRecords" FunctionImportName="GetAllLicenceRecords">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DebitControlModel.GetAllLicenceRecords_Result">
+          <ScalarProperty Name="licenceId" ColumnName="licenceId" />
+          <ScalarProperty Name="licenceName" ColumnName="licenceName" />
+          <ScalarProperty Name="licenceKey" ColumnName="licenceKey" />
+          <ScalarProperty Name="licenceMail" ColumnName="licenceMail" />
+          <ScalarProperty Name="licencePassword" ColumnName="licencePassword" />
+          <ScalarProperty Name="licenceStatus" ColumnName="licenceStatus" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="DebitControlModel.Store.GetAllMails" FunctionImportName="GetAllMails">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DebitControlModel.GetAllMails_Result">
+          <ScalarProperty Name="mailId" ColumnName="mailId" />
+          <ScalarProperty Name="mailName" ColumnName="mailName" />
+          <ScalarProperty Name="mailPassword" ColumnName="mailPassword" />
+          <ScalarProperty Name="mailStatus" ColumnName="mailStatus" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="DebitControlModel.Store.GetComputerByID" FunctionImportName="GetComputerByID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DebitControlModel.GetComputerByID_Result">
+          <ScalarProperty Name="computerId" ColumnName="computerId" />
+          <ScalarProperty Name="computerBrand" ColumnName="computerBrand" />
+          <ScalarProperty Name="computerModel" ColumnName="computerModel" />
+          <ScalarProperty Name="computerName" ColumnName="computerName" />
+          <ScalarProperty Name="computerSerialNumber" ColumnName="computerSerialNumber" />
+          <ScalarProperty Name="computerLanMac" ColumnName="computerLanMac" />
+          <ScalarProperty Name="computerWifiMac" ColumnName="computerWifiMac" />
+          <ScalarProperty Name="computerWin" ColumnName="computerWin" />
+          <ScalarProperty Name="computerOffice" ColumnName="computerOffice" />
+          <ScalarProperty Name="computerNumber" ColumnName="computerNumber" />
+          <ScalarProperty Name="computerUsbStatus" ColumnName="computerUsbStatus" />
+          <ScalarProperty Name="computerStatus" ColumnName="computerStatus" />
+          <ScalarProperty Name="licenceId" ColumnName="licenceId" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="DebitControlModel.Store.GetComputerWithLicence" FunctionImportName="GetComputerWithLicence">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DebitControlModel.GetComputerWithLicence_Result">
+          <ScalarProperty Name="computerId" ColumnName="computerId" />
+          <ScalarProperty Name="computerBrand" ColumnName="computerBrand" />
+          <ScalarProperty Name="computerModel" ColumnName="computerModel" />
+          <ScalarProperty Name="computerNumber" ColumnName="computerNumber" />
+          <ScalarProperty Name="licenceId" ColumnName="licenceId" />
+          <ScalarProperty Name="licenceName" ColumnName="licenceName" />
+          <ScalarProperty Name="licenceKey" ColumnName="licenceKey" />
+          <ScalarProperty Name="licenceMail" ColumnName="licenceMail" />
+          <ScalarProperty Name="licencePassword" ColumnName="licencePassword" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="DebitControlModel.Store.GetDebitComputer" FunctionImportName="GetDebitComputer">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DebitControlModel.GetDebitComputer_Result">
+          <ScalarProperty Name="departmentId" ColumnName="departmentId" />
+          <ScalarProperty Name="departmentName" ColumnName="departmentName" />
+          <ScalarProperty Name="locationName" ColumnName="locationName" />
+          <ScalarProperty Name="employeeId" ColumnName="employeeId" />
+          <ScalarProperty Name="employeeName" ColumnName="employeeName" />
+          <ScalarProperty Name="employeeSurname" ColumnName="employeeSurname" />
+          <ScalarProperty Name="employeeUsername" ColumnName="employeeUsername" />
+          <ScalarProperty Name="employeeStatus" ColumnName="employeeStatus" />
+          <ScalarProperty Name="computerId" ColumnName="computerId" />
+          <ScalarProperty Name="computerBrand" ColumnName="computerBrand" />
+          <ScalarProperty Name="computerModel" ColumnName="computerModel" />
+          <ScalarProperty Name="computerName" ColumnName="computerName" />
+          <ScalarProperty Name="computerSerialNumber" ColumnName="computerSerialNumber" />
+          <ScalarProperty Name="computerLanMac" ColumnName="computerLanMac" />
+          <ScalarProperty Name="computerWifiMac" ColumnName="computerWifiMac" />
+          <ScalarProperty Name="computerWin" ColumnName="computerWin" />
+          <ScalarProperty Name="computerNumber" ColumnName="computerNumber" />
+          <ScalarProperty Name="computerUsbStatus" ColumnName="computerUsbStatus" />
+          <ScalarProperty Name="computerStatus" ColumnName="computerStatus" />
+          <ScalarProperty Name="debitComputerId" ColumnName="debitComputerId" />
+          <ScalarProperty Name="debitComputerStartdate" ColumnName="debitComputerStartdate" />
+          <ScalarProperty Name="debitComputerFinishdate" ColumnName="debitComputerFinishdate" />
+          <ScalarProperty Name="debitComputerStatus" ColumnName="debitComputerStatus" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="DebitControlModel.Store.GetDebitComputerById" FunctionImportName="GetDebitComputerById">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DebitControlModel.GetDebitComputerById_Result">
+          <ScalarProperty Name="debitComputerId" ColumnName="debitComputerId" />
+          <ScalarProperty Name="debitComputerStartdate" ColumnName="debitComputerStartdate" />
+          <ScalarProperty Name="debitComputerFinishdate" ColumnName="debitComputerFinishdate" />
+          <ScalarProperty Name="employeeId" ColumnName="employeeId" />
+          <ScalarProperty Name="computerId" ColumnName="computerId" />
+          <ScalarProperty Name="debitComputerStatus" ColumnName="debitComputerStatus" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="DebitControlModel.Store.GetDebitDevice" FunctionImportName="GetDebitDevice">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DebitControlModel.GetDebitDevice_Result">
+          <ScalarProperty Name="departmentId" ColumnName="departmentId" />
+          <ScalarProperty Name="departmentName" ColumnName="departmentName" />
+          <ScalarProperty Name="locationName" ColumnName="locationName" />
+          <ScalarProperty Name="employeeId" ColumnName="employeeId" />
+          <ScalarProperty Name="employeeName" ColumnName="employeeName" />
+          <ScalarProperty Name="employeeSurname" ColumnName="employeeSurname" />
+          <ScalarProperty Name="employeeUsername" ColumnName="employeeUsername" />
+          <ScalarProperty Name="employeeStatus" ColumnName="employeeStatus" />
+          <ScalarProperty Name="deviceId" ColumnName="deviceId" />
+          <ScalarProperty Name="deviceType" ColumnName="deviceType" />
+          <ScalarProperty Name="deviceBrand" ColumnName="deviceBrand" />
+          <ScalarProperty Name="deviceModel" ColumnName="deviceModel" />
+          <ScalarProperty Name="deviceSerialNumber" ColumnName="deviceSerialNumber" />
+          <ScalarProperty Name="deviceNumber" ColumnName="deviceNumber" />
+          <ScalarProperty Name="deviceStatus" ColumnName="deviceStatus" />
+          <ScalarProperty Name="debitDeviceId" ColumnName="debitDeviceId" />
+          <ScalarProperty Name="debitDeviceStartdate" ColumnName="debitDeviceStartdate" />
+          <ScalarProperty Name="debitDeviceFinishdate" ColumnName="debitDeviceFinishdate" />
+          <ScalarProperty Name="debitDeviceStatus" ColumnName="debitDeviceStatus" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="DebitControlModel.Store.GetDebitDeviceById" FunctionImportName="GetDebitDeviceById">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DebitControlModel.GetDebitDeviceById_Result">
+          <ScalarProperty Name="debitDeviceId" ColumnName="debitDeviceId" />
+          <ScalarProperty Name="debitDeviceStartdate" ColumnName="debitDeviceStartdate" />
+          <ScalarProperty Name="debitDeviceFinishdate" ColumnName="debitDeviceFinishdate" />
+          <ScalarProperty Name="debitDeviceStatus" ColumnName="debitDeviceStatus" />
+          <ScalarProperty Name="employeeId" ColumnName="employeeId" />
+          <ScalarProperty Name="deviceId" ColumnName="deviceId" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="DebitControlModel.Store.GetDepartmentById" FunctionImportName="GetDepartmentById">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DebitControlModel.GetDepartmentById_Result">
+          <ScalarProperty Name="departmentId" ColumnName="departmentId" />
+          <ScalarProperty Name="departmentName" ColumnName="departmentName" />
+          <ScalarProperty Name="locationName" ColumnName="locationName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="DebitControlModel.Store.GetDeviceByID" FunctionImportName="GetDeviceByID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DebitControlModel.GetDeviceByID_Result">
+          <ScalarProperty Name="deviceId" ColumnName="deviceId" />
+          <ScalarProperty Name="deviceType" ColumnName="deviceType" />
+          <ScalarProperty Name="deviceBrand" ColumnName="deviceBrand" />
+          <ScalarProperty Name="deviceModel" ColumnName="deviceModel" />
+          <ScalarProperty Name="deviceSerialNumber" ColumnName="deviceSerialNumber" />
+          <ScalarProperty Name="deviceNumber" ColumnName="deviceNumber" />
+          <ScalarProperty Name="deviceStatus" ColumnName="deviceStatus" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="DebitControlModel.Store.GetEmployeeById" FunctionImportName="GetEmployeeById">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DebitControlModel.GetEmployeeById_Result">
+          <ScalarProperty Name="employeeId" ColumnName="employeeId" />
+          <ScalarProperty Name="employeeName" ColumnName="employeeName" />
+          <ScalarProperty Name="employeeSurname" ColumnName="employeeSurname" />
+          <ScalarProperty Name="employeeUsername" ColumnName="employeeUsername" />
+          <ScalarProperty Name="employeeStatus" ColumnName="employeeStatus" />
+          <ScalarProperty Name="departmentId" ColumnName="departmentId" />
+          <ScalarProperty Name="mailId" ColumnName="mailId" />
+          <ScalarProperty Name="mailName" ColumnName="mailName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="DebitControlModel.Store.GetEmployeeData" FunctionImportName="GetEmployeeData">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DebitControlModel.GetEmployeeData_Result">
+          <ScalarProperty Name="departmentId" ColumnName="departmentId" />
+          <ScalarProperty Name="departmentName" ColumnName="departmentName" />
+          <ScalarProperty Name="locationName" ColumnName="locationName" />
+          <ScalarProperty Name="employeeId" ColumnName="employeeId" />
+          <ScalarProperty Name="employeeName" ColumnName="employeeName" />
+          <ScalarProperty Name="employeeSurname" ColumnName="employeeSurname" />
+          <ScalarProperty Name="employeeUsername" ColumnName="employeeUsername" />
+          <ScalarProperty Name="employeeStatus" ColumnName="employeeStatus" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="DebitControlModel.Store.GetLicenseById" FunctionImportName="GetLicenseById">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DebitControlModel.GetLicenseById_Result">
+          <ScalarProperty Name="licenceId" ColumnName="licenceId" />
+          <ScalarProperty Name="licenceName" ColumnName="licenceName" />
+          <ScalarProperty Name="licenceKey" ColumnName="licenceKey" />
+          <ScalarProperty Name="licenceMail" ColumnName="licenceMail" />
+          <ScalarProperty Name="licencePassword" ColumnName="licencePassword" />
+          <ScalarProperty Name="licenceStatus" ColumnName="licenceStatus" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="DebitControlModel.Store.GetMailById" FunctionImportName="GetMailById">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DebitControlModel.GetMailById_Result">
+          <ScalarProperty Name="mailId" ColumnName="mailId" />
+          <ScalarProperty Name="mailName" ColumnName="mailName" />
+          <ScalarProperty Name="mailPassword" ColumnName="mailPassword" />
+          <ScalarProperty Name="mailStatus" ColumnName="mailStatus" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="DebitControlModel.Store.GetTerminatedLicenceById" FunctionImportName="GetTerminatedLicenceById">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DebitControlModel.GetTerminatedLicenceById_Result">
+          <ScalarProperty Name="licenseId" ColumnName="licenseId" />
+          <ScalarProperty Name="licenseName" ColumnName="licenseName" />
+          <ScalarProperty Name="obtainedFrom" ColumnName="obtainedFrom" />
+          <ScalarProperty Name="obtainedDate" ColumnName="obtainedDate" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="licencepassword" ColumnName="licencepassword" />
+          <ScalarProperty Name="licenceCode" ColumnName="licenceCode" />
+          <ScalarProperty Name="issuedPerson" ColumnName="issuedPerson" />
+          <ScalarProperty Name="issuedDepartment" ColumnName="issuedDepartment" />
+          <ScalarProperty Name="licenceDuration" ColumnName="licenceDuration" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="DebitControlModel.Store.GetTerminatedLicences" FunctionImportName="GetTerminatedLicences">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DebitControlModel.GetTerminatedLicences_Result">
+          <ScalarProperty Name="licenseId" ColumnName="licenseId" />
+          <ScalarProperty Name="licenseName" ColumnName="licenseName" />
+          <ScalarProperty Name="obtainedFrom" ColumnName="obtainedFrom" />
+          <ScalarProperty Name="obtainedDate" ColumnName="obtainedDate" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="licencepassword" ColumnName="licencepassword" />
+          <ScalarProperty Name="licenceCode" ColumnName="licenceCode" />
+          <ScalarProperty Name="issuedPerson" ColumnName="issuedPerson" />
+          <ScalarProperty Name="issuedDepartment" ColumnName="issuedDepartment" />
+          <ScalarProperty Name="licenceDuration" ColumnName="licenceDuration" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="AddDepartment" FunctionName="DebitControlModel.Store.AddDepartment" />
+    <FunctionImportMapping FunctionImportName="CreateComputer" FunctionName="DebitControlModel.Store.CreateComputer" />
+    <FunctionImportMapping FunctionImportName="CreateDebitComputer" FunctionName="DebitControlModel.Store.CreateDebitComputer" />
+    <FunctionImportMapping FunctionImportName="CreateDebitDevice" FunctionName="DebitControlModel.Store.CreateDebitDevice" />
+    <FunctionImportMapping FunctionImportName="CreateDevice" FunctionName="DebitControlModel.Store.CreateDevice" />
+    <FunctionImportMapping FunctionImportName="DeleteComputer" FunctionName="DebitControlModel.Store.DeleteComputer" />
+    <FunctionImportMapping FunctionImportName="DeleteDepartment" FunctionName="DebitControlModel.Store.DeleteDepartment" />
+    <FunctionImportMapping FunctionImportName="DeleteDevice" FunctionName="DebitControlModel.Store.DeleteDevice" />
+    <FunctionImportMapping FunctionImportName="DeleteLicense" FunctionName="DebitControlModel.Store.DeleteLicense" />
+    <FunctionImportMapping FunctionImportName="DeleteTerminatedLicence" FunctionName="DebitControlModel.Store.DeleteTerminatedLicence" />
+    <FunctionImportMapping FunctionImportName="DisableDebitComputer" FunctionName="DebitControlModel.Store.DisableDebitComputer" />
+    <FunctionImportMapping FunctionImportName="DisableDebitDevice" FunctionName="DebitControlModel.Store.DisableDebitDevice" />
+    <FunctionImportMapping FunctionImportName="DisableEmployee" FunctionName="DebitControlModel.Store.DisableEmployee" />
+    <FunctionImportMapping FunctionImportName="DisableMail" FunctionName="DebitControlModel.Store.DisableMail" />
+    <FunctionImportMapping FunctionImportName="InsertDepartment" FunctionName="DebitControlModel.Store.InsertDepartment" />
+    <FunctionImportMapping FunctionImportName="InsertEmployee" FunctionName="DebitControlModel.Store.InsertEmployee" />
+    <FunctionImportMapping FunctionImportName="InsertLicense" FunctionName="DebitControlModel.Store.InsertLicense" />
+    <FunctionImportMapping FunctionImportName="InsertMail" FunctionName="DebitControlModel.Store.InsertMail" />
+    <FunctionImportMapping FunctionImportName="InsertTerminatedLicence" FunctionName="DebitControlModel.Store.InsertTerminatedLicence" />
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="DebitControlModel.Store.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="DebitControlModel.Store.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="DebitControlModel.Store.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="DebitControlModel.Store.sp_helpdiagramdefinition" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="DebitControlModel.Store.sp_helpdiagrams" />
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="DebitControlModel.Store.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="DebitControlModel.Store.sp_upgraddiagrams" />
+    <FunctionImportMapping FunctionImportName="UpdateComputer" FunctionName="DebitControlModel.Store.UpdateComputer" />
+    <FunctionImportMapping FunctionImportName="UpdateDebitComputer" FunctionName="DebitControlModel.Store.UpdateDebitComputer" />
+    <FunctionImportMapping FunctionImportName="UpdateDebitDevice" FunctionName="DebitControlModel.Store.UpdateDebitDevice" />
+    <FunctionImportMapping FunctionImportName="UpdateDepartment" FunctionName="DebitControlModel.Store.UpdateDepartment" />
+    <FunctionImportMapping FunctionImportName="UpdateDevice" FunctionName="DebitControlModel.Store.UpdateDevice" />
+    <FunctionImportMapping FunctionImportName="UpdateEmployeeById" FunctionName="DebitControlModel.Store.UpdateEmployeeById" />
+    <FunctionImportMapping FunctionImportName="UpdateLicenceForComputer" FunctionName="DebitControlModel.Store.UpdateLicenceForComputer" />
+    <FunctionImportMapping FunctionImportName="UpdateLicense" FunctionName="DebitControlModel.Store.UpdateLicense" />
+    <FunctionImportMapping FunctionImportName="UpdateMail" FunctionName="DebitControlModel.Store.UpdateMail" />
+    <FunctionImportMapping FunctionImportName="UpdateTerminatedLicence" FunctionName="DebitControlModel.Store.UpdateTerminatedLicence" />
+    <FunctionImportMapping FunctionImportName="usp_Login" FunctionName="DebitControlModel.Store.usp_Login">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DebitControlModel.usp_Login_Result">
+          <ScalarProperty Name="Value" ColumnName="Value" />
+          <ScalarProperty Name="UserRole" ColumnName="UserRole" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

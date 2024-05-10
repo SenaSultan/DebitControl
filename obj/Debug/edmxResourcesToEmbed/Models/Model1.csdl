@@ -1,0 +1,929 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DebitControlModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <ComplexType Name="GetActiveComputers_Result">
+    <Property Name="computerId" Type="Int16" Nullable="false" />
+    <Property Name="computerBrand" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="computerModel" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="computerName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="computerSerialNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="computerLanMac" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="computerWifiMac" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="computerWin" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="computerOffice" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="computerNumber" Type="Int16" Nullable="false" />
+    <Property Name="computerUsbStatus" Type="Boolean" Nullable="false" />
+    <Property Name="computerStatus" Type="Boolean" Nullable="false" />
+    <Property Name="licenceId" Type="Int16" />
+  </ComplexType>
+  <ComplexType Name="GetActiveDebitComputer_Result">
+    <Property Name="departmentId" Type="Byte" Nullable="false" />
+    <Property Name="departmentName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="locationName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="employeeId" Type="Int16" Nullable="false" />
+    <Property Name="employeeName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="employeeSurname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="employeeUsername" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="employeeStatus" Type="Boolean" Nullable="false" />
+    <Property Name="computerId" Type="Int16" Nullable="false" />
+    <Property Name="computerBrand" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="computerModel" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="computerName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="computerSerialNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="computerLanMac" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="computerWifiMac" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="computerWin" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="computerNumber" Type="Int16" Nullable="false" />
+    <Property Name="computerUsbStatus" Type="Boolean" Nullable="false" />
+    <Property Name="computerStatus" Type="Boolean" Nullable="false" />
+    <Property Name="debitComputerId" Type="Int16" Nullable="false" />
+    <Property Name="debitComputerStartdate" Type="DateTime" Nullable="false" />
+    <Property Name="debitComputerFinishdate" Type="DateTime" />
+    <Property Name="debitComputerStatus" Type="Boolean" />
+  </ComplexType>
+  <ComplexType Name="GetActiveDebitComputerByComputerId_Result">
+    <Property Name="departmentId" Type="Byte" Nullable="false" />
+    <Property Name="departmentName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="locationName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="employeeId" Type="Int16" Nullable="false" />
+    <Property Name="employeeName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="employeeSurname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="employeeUsername" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="employeeStatus" Type="Boolean" Nullable="false" />
+    <Property Name="computerId" Type="Int16" Nullable="false" />
+    <Property Name="computerBrand" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="computerModel" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="computerName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="computerSerialNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="computerLanMac" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="computerWifiMac" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="computerWin" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="computerNumber" Type="Int16" Nullable="false" />
+    <Property Name="computerUsbStatus" Type="Boolean" Nullable="false" />
+    <Property Name="computerStatus" Type="Boolean" Nullable="false" />
+    <Property Name="debitComputerId" Type="Int16" Nullable="false" />
+    <Property Name="debitComputerStartdate" Type="DateTime" Nullable="false" />
+    <Property Name="debitComputerFinishdate" Type="DateTime" />
+    <Property Name="debitComputerStatus" Type="Boolean" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="GetActiveDebitDevice_Result">
+    <Property Name="departmentId" Type="Byte" Nullable="false" />
+    <Property Name="departmentName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="locationName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="employeeId" Type="Int16" Nullable="false" />
+    <Property Name="employeeName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="employeeSurname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="employeeUsername" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="employeeStatus" Type="Boolean" Nullable="false" />
+    <Property Name="deviceId" Type="Int16" Nullable="false" />
+    <Property Name="deviceType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="deviceBrand" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="deviceModel" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="deviceSerialNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="deviceNumber" Type="Int16" Nullable="false" />
+    <Property Name="deviceStatus" Type="Boolean" Nullable="false" />
+    <Property Name="debitDeviceId" Type="Int16" Nullable="false" />
+    <Property Name="debitDeviceStartdate" Type="DateTime" Nullable="false" />
+    <Property Name="debitDeviceFinishdate" Type="DateTime" />
+    <Property Name="debitDeviceStatus" Type="Boolean" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="GetActiveDebitDeviceByDeviceId_Result">
+    <Property Name="departmentId" Type="Byte" Nullable="false" />
+    <Property Name="departmentName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="locationName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="employeeId" Type="Int16" Nullable="false" />
+    <Property Name="employeeName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="employeeSurname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="employeeUsername" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="employeeStatus" Type="Boolean" Nullable="false" />
+    <Property Name="deviceId" Type="Int16" Nullable="false" />
+    <Property Name="deviceType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="deviceBrand" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="deviceModel" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="deviceSerialNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="deviceNumber" Type="Int16" Nullable="false" />
+    <Property Name="deviceStatus" Type="Boolean" Nullable="false" />
+    <Property Name="debitDeviceId" Type="Int16" Nullable="false" />
+    <Property Name="debitDeviceStartdate" Type="DateTime" Nullable="false" />
+    <Property Name="debitDeviceFinishdate" Type="DateTime" />
+    <Property Name="debitDeviceStatus" Type="Boolean" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="GetActiveDevices_Result">
+    <Property Name="deviceId" Type="Int16" Nullable="false" />
+    <Property Name="deviceType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="deviceBrand" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="deviceModel" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="deviceSerialNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="deviceNumber" Type="Int16" Nullable="false" />
+    <Property Name="deviceStatus" Type="Boolean" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="GetActiveEmployees_Result">
+    <Property Name="employeeId" Type="Int16" Nullable="false" />
+    <Property Name="employeeName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="employeeSurname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="employeeUsername" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="employeeStatus" Type="Boolean" Nullable="false" />
+    <Property Name="departmentId" Type="Byte" />
+    <Property Name="mailId" Type="Int16" />
+    <Property Name="mailName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </ComplexType>
+  <ComplexType Name="GetAllComputerRecords_Result">
+    <Property Name="computerId" Type="Int16" Nullable="false" />
+    <Property Name="computerBrand" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="computerModel" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="computerName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="computerSerialNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="computerLanMac" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="computerWifiMac" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="computerWin" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="computerOffice" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="computerNumber" Type="Int16" Nullable="false" />
+    <Property Name="computerUsbStatus" Type="Boolean" Nullable="false" />
+    <Property Name="computerStatus" Type="Boolean" Nullable="false" />
+    <Property Name="licenceId" Type="Int16" />
+  </ComplexType>
+  <ComplexType Name="GetAllDebitComputerRecords_Result">
+    <Property Name="debitComputerId" Type="Int16" Nullable="false" />
+    <Property Name="debitComputerStartdate" Type="DateTime" Nullable="false" />
+    <Property Name="debitComputerFinishdate" Type="DateTime" />
+    <Property Name="employeeId" Type="Int16" />
+    <Property Name="computerId" Type="Int16" />
+    <Property Name="debitComputerStatus" Type="Boolean" />
+  </ComplexType>
+  <ComplexType Name="GetAllDebitDeviceRecords_Result">
+    <Property Name="debitDeviceId" Type="Int16" Nullable="false" />
+    <Property Name="debitDeviceStartdate" Type="DateTime" Nullable="false" />
+    <Property Name="debitDeviceFinishdate" Type="DateTime" />
+    <Property Name="debitDeviceStatus" Type="Boolean" Nullable="false" />
+    <Property Name="employeeId" Type="Int16" />
+    <Property Name="deviceId" Type="Int16" />
+  </ComplexType>
+  <ComplexType Name="GetAllDebitDevices_Result">
+    <Property Name="debitDeviceId" Type="Int16" Nullable="false" />
+    <Property Name="debitDeviceStartdate" Type="DateTime" Nullable="false" />
+    <Property Name="debitDeviceFinishdate" Type="DateTime" />
+    <Property Name="debitDeviceStatus" Type="Boolean" Nullable="false" />
+    <Property Name="employeeId" Type="Int16" />
+    <Property Name="deviceId" Type="Int16" />
+  </ComplexType>
+  <ComplexType Name="GetAllDepartmentRecords_Result">
+    <Property Name="departmentId" Type="Byte" Nullable="false" />
+    <Property Name="departmentName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="locationName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="departmentStatus" Type="Boolean" />
+  </ComplexType>
+  <ComplexType Name="GetAllDeviceRecords_Result">
+    <Property Name="deviceId" Type="Int16" Nullable="false" />
+    <Property Name="deviceType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="deviceBrand" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="deviceModel" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="deviceSerialNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="deviceNumber" Type="Int16" Nullable="false" />
+    <Property Name="deviceStatus" Type="Boolean" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="GetAllEmployeeRecords_Result">
+    <Property Name="employeeId" Type="Int16" Nullable="false" />
+    <Property Name="employeeName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="employeeSurname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="employeeUsername" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="employeeStatus" Type="Boolean" Nullable="false" />
+    <Property Name="departmentId" Type="Byte" />
+    <Property Name="mailId" Type="Int16" />
+    <Property Name="mailName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </ComplexType>
+  <ComplexType Name="GetAllLicenceRecords_Result">
+    <Property Name="licenceId" Type="Int16" Nullable="false" />
+    <Property Name="licenceName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="licenceKey" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="licenceMail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="licencePassword" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="licenceStatus" Type="Boolean" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="GetAllMails_Result">
+    <Property Name="mailId" Type="Int16" Nullable="false" />
+    <Property Name="mailName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="mailPassword" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="mailStatus" Type="Boolean" />
+  </ComplexType>
+  <ComplexType Name="GetComputerByID_Result">
+    <Property Name="computerId" Type="Int16" Nullable="false" />
+    <Property Name="computerBrand" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="computerModel" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="computerName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="computerSerialNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="computerLanMac" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="computerWifiMac" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="computerWin" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="computerOffice" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="computerNumber" Type="Int16" Nullable="false" />
+    <Property Name="computerUsbStatus" Type="Boolean" Nullable="false" />
+    <Property Name="computerStatus" Type="Boolean" Nullable="false" />
+    <Property Name="licenceId" Type="Int16" />
+  </ComplexType>
+  <ComplexType Name="GetComputerWithLicence_Result">
+    <Property Name="computerId" Type="Int16" Nullable="false" />
+    <Property Name="computerBrand" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="computerModel" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="computerNumber" Type="Int16" Nullable="false" />
+    <Property Name="licenceId" Type="Int16" Nullable="false" />
+    <Property Name="licenceName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="licenceKey" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="licenceMail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="licencePassword" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </ComplexType>
+  <ComplexType Name="GetDebitComputer_Result">
+    <Property Name="departmentId" Type="Byte" Nullable="false" />
+    <Property Name="departmentName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="locationName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="employeeId" Type="Int16" Nullable="false" />
+    <Property Name="employeeName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="employeeSurname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="employeeUsername" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="employeeStatus" Type="Boolean" Nullable="false" />
+    <Property Name="computerId" Type="Int16" Nullable="false" />
+    <Property Name="computerBrand" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="computerModel" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="computerName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="computerSerialNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="computerLanMac" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="computerWifiMac" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="computerWin" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="computerNumber" Type="Int16" Nullable="false" />
+    <Property Name="computerUsbStatus" Type="Boolean" Nullable="false" />
+    <Property Name="computerStatus" Type="Boolean" Nullable="false" />
+    <Property Name="debitComputerId" Type="Int16" Nullable="false" />
+    <Property Name="debitComputerStartdate" Type="DateTime" Nullable="false" />
+    <Property Name="debitComputerFinishdate" Type="DateTime" />
+    <Property Name="debitComputerStatus" Type="Boolean" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="GetDebitComputerById_Result">
+    <Property Name="debitComputerId" Type="Int16" Nullable="false" />
+    <Property Name="debitComputerStartdate" Type="DateTime" Nullable="false" />
+    <Property Name="debitComputerFinishdate" Type="DateTime" />
+    <Property Name="employeeId" Type="Int16" />
+    <Property Name="computerId" Type="Int16" />
+    <Property Name="debitComputerStatus" Type="Boolean" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="GetDebitDevice_Result">
+    <Property Name="departmentId" Type="Byte" Nullable="false" />
+    <Property Name="departmentName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="locationName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="employeeId" Type="Int16" Nullable="false" />
+    <Property Name="employeeName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="employeeSurname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="employeeUsername" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="employeeStatus" Type="Boolean" Nullable="false" />
+    <Property Name="deviceId" Type="Int16" Nullable="false" />
+    <Property Name="deviceType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="deviceBrand" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="deviceModel" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="deviceSerialNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="deviceNumber" Type="Int16" Nullable="false" />
+    <Property Name="deviceStatus" Type="Boolean" Nullable="false" />
+    <Property Name="debitDeviceId" Type="Int16" Nullable="false" />
+    <Property Name="debitDeviceStartdate" Type="DateTime" Nullable="false" />
+    <Property Name="debitDeviceFinishdate" Type="DateTime" />
+    <Property Name="debitDeviceStatus" Type="Boolean" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="GetDebitDeviceById_Result">
+    <Property Name="debitDeviceId" Type="Int16" Nullable="false" />
+    <Property Name="debitDeviceStartdate" Type="DateTime" Nullable="false" />
+    <Property Name="debitDeviceFinishdate" Type="DateTime" />
+    <Property Name="debitDeviceStatus" Type="Boolean" Nullable="false" />
+    <Property Name="employeeId" Type="Int16" />
+    <Property Name="deviceId" Type="Int16" />
+  </ComplexType>
+  <ComplexType Name="GetDepartmentById_Result">
+    <Property Name="departmentId" Type="Byte" Nullable="false" />
+    <Property Name="departmentName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="locationName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="GetDeviceByID_Result">
+    <Property Name="deviceId" Type="Int16" Nullable="false" />
+    <Property Name="deviceType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="deviceBrand" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="deviceModel" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="deviceSerialNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="deviceNumber" Type="Int16" Nullable="false" />
+    <Property Name="deviceStatus" Type="Boolean" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="GetEmployeeById_Result">
+    <Property Name="employeeId" Type="Int16" Nullable="false" />
+    <Property Name="employeeName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="employeeSurname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="employeeUsername" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="employeeStatus" Type="Boolean" Nullable="false" />
+    <Property Name="departmentId" Type="Byte" />
+    <Property Name="mailId" Type="Int16" />
+    <Property Name="mailName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </ComplexType>
+  <ComplexType Name="GetEmployeeData_Result">
+    <Property Name="departmentId" Type="Byte" Nullable="false" />
+    <Property Name="departmentName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="locationName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="employeeId" Type="Int16" Nullable="false" />
+    <Property Name="employeeName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="employeeSurname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="employeeUsername" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="employeeStatus" Type="Boolean" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="GetLicenseById_Result">
+    <Property Name="licenceId" Type="Int16" Nullable="false" />
+    <Property Name="licenceName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="licenceKey" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="licenceMail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="licencePassword" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="licenceStatus" Type="Boolean" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="GetMailById_Result">
+    <Property Name="mailId" Type="Int16" Nullable="false" />
+    <Property Name="mailName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="mailPassword" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="mailStatus" Type="Boolean" />
+  </ComplexType>
+  <ComplexType Name="GetTerminatedLicenceById_Result">
+    <Property Name="licenseId" Type="Int32" Nullable="false" />
+    <Property Name="licenseName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="obtainedFrom" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="obtainedDate" Type="DateTime" />
+    <Property Name="email" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="licencepassword" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="licenceCode" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="issuedPerson" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="issuedDepartment" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="licenceDuration" Type="Int16" />
+  </ComplexType>
+  <ComplexType Name="GetTerminatedLicences_Result">
+    <Property Name="licenseId" Type="Int32" Nullable="false" />
+    <Property Name="licenseName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="obtainedFrom" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="obtainedDate" Type="DateTime" />
+    <Property Name="email" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="licencepassword" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="licenceCode" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="issuedPerson" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="issuedDepartment" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="licenceDuration" Type="Int16" />
+  </ComplexType>
+  <EntityType Name="Administrator">
+    <Key>
+      <PropertyRef Name="administratorId" />
+    </Key>
+    <Property Name="administratorId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="administratorName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="administratorSurname" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="administratorUsername" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="administratorPassword" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="administratorRole" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="administratorTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Computer">
+    <Key>
+      <PropertyRef Name="computerId" />
+    </Key>
+    <Property Name="computerId" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="computerBrand" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="computerModel" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="computerName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="computerSerialNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="computerLanMac" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="computerWifiMac" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="computerWin" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="computerOffice" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="computerNumber" Type="Int16" Nullable="false" />
+    <Property Name="computerUsbStatus" Type="Boolean" Nullable="false" />
+    <Property Name="computerStatus" Type="Boolean" Nullable="false" />
+    <Property Name="licenceId" Type="Int16" />
+    <NavigationProperty Name="License" Relationship="Self.FK__Computer__licenc__5070F446" FromRole="Computer" ToRole="License" />
+    <NavigationProperty Name="DebitComputer" Relationship="Self.FK__DebitComp__compu__5535A963" FromRole="Computer" ToRole="DebitComputer" />
+  </EntityType>
+  <EntityType Name="DebitComputer">
+    <Key>
+      <PropertyRef Name="debitComputerId" />
+    </Key>
+    <Property Name="debitComputerId" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="debitComputerStartdate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="debitComputerFinishdate" Type="DateTime" Precision="0" />
+    <Property Name="employeeId" Type="Int16" />
+    <Property Name="computerId" Type="Int16" />
+    <Property Name="debitComputerStatus" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Computer" Relationship="Self.FK__DebitComp__compu__5535A963" FromRole="DebitComputer" ToRole="Computer" />
+    <NavigationProperty Name="Employee" Relationship="Self.FK__DebitComp__emplo__5441852A" FromRole="DebitComputer" ToRole="Employee" />
+  </EntityType>
+  <EntityType Name="DebitDevice">
+    <Key>
+      <PropertyRef Name="debitDeviceId" />
+    </Key>
+    <Property Name="debitDeviceId" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="debitDeviceStartdate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="debitDeviceFinishdate" Type="DateTime" Precision="0" />
+    <Property Name="debitDeviceStatus" Type="Boolean" Nullable="false" />
+    <Property Name="employeeId" Type="Int16" />
+    <Property Name="deviceId" Type="Int16" />
+    <NavigationProperty Name="Device" Relationship="Self.FK__DebitDevi__devic__59FA5E80" FromRole="DebitDevice" ToRole="Device" />
+    <NavigationProperty Name="Employee" Relationship="Self.FK__DebitDevi__emplo__59063A47" FromRole="DebitDevice" ToRole="Employee" />
+  </EntityType>
+  <EntityType Name="Department">
+    <Key>
+      <PropertyRef Name="departmentId" />
+    </Key>
+    <Property Name="departmentId" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="departmentName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="locationName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="departmentStatus" Type="Boolean" />
+    <NavigationProperty Name="Employee" Relationship="Self.FK__Employee__depart__45F365D3" FromRole="Department" ToRole="Employee" />
+  </EntityType>
+  <EntityType Name="Device">
+    <Key>
+      <PropertyRef Name="deviceId" />
+    </Key>
+    <Property Name="deviceId" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="deviceType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="deviceBrand" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="deviceModel" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="deviceSerialNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="deviceNumber" Type="Int16" Nullable="false" />
+    <Property Name="deviceStatus" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="DebitDevice" Relationship="Self.FK__DebitDevi__devic__59FA5E80" FromRole="Device" ToRole="DebitDevice" />
+  </EntityType>
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="employeeId" />
+    </Key>
+    <Property Name="employeeId" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="employeeName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="employeeSurname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="employeeUsername" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="employeeStatus" Type="Boolean" Nullable="false" />
+    <Property Name="departmentId" Type="Byte" />
+    <Property Name="mailId" Type="Int16" />
+    <Property Name="employeeTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="DebitComputer" Relationship="Self.FK__DebitComp__emplo__5441852A" FromRole="Employee" ToRole="DebitComputer" />
+    <NavigationProperty Name="DebitDevice" Relationship="Self.FK__DebitDevi__emplo__59063A47" FromRole="Employee" ToRole="DebitDevice" />
+    <NavigationProperty Name="Department" Relationship="Self.FK__Employee__depart__45F365D3" FromRole="Employee" ToRole="Department" />
+    <NavigationProperty Name="Mail" Relationship="Self.FK_Employee_Mail" FromRole="Employee" ToRole="Mail" />
+  </EntityType>
+  <EntityType Name="License">
+    <Key>
+      <PropertyRef Name="licenceId" />
+    </Key>
+    <Property Name="licenceId" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="licenceName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="licenceKey" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="licenceMail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="licencePassword" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="licenceStatus" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Computer" Relationship="Self.FK__Computer__licenc__5070F446" FromRole="License" ToRole="Computer" />
+  </EntityType>
+  <EntityType Name="Mail">
+    <Key>
+      <PropertyRef Name="mailId" />
+    </Key>
+    <Property Name="mailId" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="mailName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="mailPassword" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="mailStatus" Type="Boolean" />
+    <NavigationProperty Name="Employee" Relationship="Self.FK_Employee_Mail" FromRole="Mail" ToRole="Employee" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="terminatedLicence">
+    <Key>
+      <PropertyRef Name="licenseId" />
+    </Key>
+    <Property Name="licenseId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="licenseName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="obtainedFrom" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="obtainedDate" Type="DateTime" Precision="0" />
+    <Property Name="email" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="licencepassword" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="licenceCode" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="issuedPerson" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="issuedDepartment" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="licenceDuration" Type="Int16" />
+  </EntityType>
+  <EntityType Name="terminatedLicence_Log">
+    <Key>
+      <PropertyRef Name="logId" />
+    </Key>
+    <Property Name="logId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="actionType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="licenseId" Type="Int32" />
+    <Property Name="licenseName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="obtainedFrom" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="obtainedDate" Type="DateTime" Precision="0" />
+    <Property Name="email" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="licencepassword" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="licenceCode" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="issuedPerson" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="issuedDepartment" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="licenceDuration" Type="Int16" />
+    <Property Name="logDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <Association Name="FK__Computer__licenc__5070F446">
+    <End Role="License" Type="Self.License" Multiplicity="0..1" />
+    <End Role="Computer" Type="Self.Computer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="License">
+        <PropertyRef Name="licenceId" />
+      </Principal>
+      <Dependent Role="Computer">
+        <PropertyRef Name="licenceId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__DebitComp__compu__5535A963">
+    <End Role="Computer" Type="Self.Computer" Multiplicity="0..1" />
+    <End Role="DebitComputer" Type="Self.DebitComputer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Computer">
+        <PropertyRef Name="computerId" />
+      </Principal>
+      <Dependent Role="DebitComputer">
+        <PropertyRef Name="computerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__DebitComp__emplo__5441852A">
+    <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
+    <End Role="DebitComputer" Type="Self.DebitComputer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="employeeId" />
+      </Principal>
+      <Dependent Role="DebitComputer">
+        <PropertyRef Name="employeeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__DebitDevi__devic__59FA5E80">
+    <End Role="Device" Type="Self.Device" Multiplicity="0..1" />
+    <End Role="DebitDevice" Type="Self.DebitDevice" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Device">
+        <PropertyRef Name="deviceId" />
+      </Principal>
+      <Dependent Role="DebitDevice">
+        <PropertyRef Name="deviceId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__DebitDevi__emplo__59063A47">
+    <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
+    <End Role="DebitDevice" Type="Self.DebitDevice" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="employeeId" />
+      </Principal>
+      <Dependent Role="DebitDevice">
+        <PropertyRef Name="employeeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Employee__depart__45F365D3">
+    <End Role="Department" Type="Self.Department" Multiplicity="0..1" />
+    <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Department">
+        <PropertyRef Name="departmentId" />
+      </Principal>
+      <Dependent Role="Employee">
+        <PropertyRef Name="departmentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Employee_Mail">
+    <End Role="Mail" Type="Self.Mail" Multiplicity="0..1" />
+    <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Mail">
+        <PropertyRef Name="mailId" />
+      </Principal>
+      <Dependent Role="Employee">
+        <PropertyRef Name="mailId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DebitControlEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Administrator" EntityType="Self.Administrator" />
+    <EntitySet Name="Computer" EntityType="Self.Computer" />
+    <EntitySet Name="DebitComputer" EntityType="Self.DebitComputer" />
+    <EntitySet Name="DebitDevice" EntityType="Self.DebitDevice" />
+    <EntitySet Name="Department" EntityType="Self.Department" />
+    <EntitySet Name="Device" EntityType="Self.Device" />
+    <EntitySet Name="Employee" EntityType="Self.Employee" />
+    <EntitySet Name="License" EntityType="Self.License" />
+    <EntitySet Name="Mail" EntityType="Self.Mail" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="terminatedLicence" EntityType="Self.terminatedLicence" />
+    <EntitySet Name="terminatedLicence_Log" EntityType="Self.terminatedLicence_Log" />
+    <AssociationSet Name="FK__Computer__licenc__5070F446" Association="Self.FK__Computer__licenc__5070F446">
+      <End Role="License" EntitySet="License" />
+      <End Role="Computer" EntitySet="Computer" />
+    </AssociationSet>
+    <AssociationSet Name="FK__DebitComp__compu__5535A963" Association="Self.FK__DebitComp__compu__5535A963">
+      <End Role="Computer" EntitySet="Computer" />
+      <End Role="DebitComputer" EntitySet="DebitComputer" />
+    </AssociationSet>
+    <AssociationSet Name="FK__DebitComp__emplo__5441852A" Association="Self.FK__DebitComp__emplo__5441852A">
+      <End Role="Employee" EntitySet="Employee" />
+      <End Role="DebitComputer" EntitySet="DebitComputer" />
+    </AssociationSet>
+    <AssociationSet Name="FK__DebitDevi__devic__59FA5E80" Association="Self.FK__DebitDevi__devic__59FA5E80">
+      <End Role="Device" EntitySet="Device" />
+      <End Role="DebitDevice" EntitySet="DebitDevice" />
+    </AssociationSet>
+    <AssociationSet Name="FK__DebitDevi__emplo__59063A47" Association="Self.FK__DebitDevi__emplo__59063A47">
+      <End Role="Employee" EntitySet="Employee" />
+      <End Role="DebitDevice" EntitySet="DebitDevice" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Employee__depart__45F365D3" Association="Self.FK__Employee__depart__45F365D3">
+      <End Role="Department" EntitySet="Department" />
+      <End Role="Employee" EntitySet="Employee" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Employee_Mail" Association="Self.FK_Employee_Mail">
+      <End Role="Mail" EntitySet="Mail" />
+      <End Role="Employee" EntitySet="Employee" />
+    </AssociationSet>
+    <FunctionImport Name="GetActiveComputers" IsComposable="true" ReturnType="Collection(DebitControlModel.GetActiveComputers_Result)" />
+    <FunctionImport Name="GetActiveDebitComputer" IsComposable="true" ReturnType="Collection(DebitControlModel.GetActiveDebitComputer_Result)" />
+    <FunctionImport Name="GetActiveDebitComputerByComputerId" IsComposable="true" ReturnType="Collection(DebitControlModel.GetActiveDebitComputerByComputerId_Result)">
+      <Parameter Name="computerId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="GetActiveDebitDevice" IsComposable="true" ReturnType="Collection(DebitControlModel.GetActiveDebitDevice_Result)" />
+    <FunctionImport Name="GetActiveDebitDeviceByDeviceId" IsComposable="true" ReturnType="Collection(DebitControlModel.GetActiveDebitDeviceByDeviceId_Result)">
+      <Parameter Name="deviceId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="GetActiveDevices" IsComposable="true" ReturnType="Collection(DebitControlModel.GetActiveDevices_Result)" />
+    <FunctionImport Name="GetActiveEmployees" IsComposable="true" ReturnType="Collection(DebitControlModel.GetActiveEmployees_Result)" />
+    <FunctionImport Name="GetAllComputerRecords" IsComposable="true" ReturnType="Collection(DebitControlModel.GetAllComputerRecords_Result)" />
+    <FunctionImport Name="GetAllDebitComputerRecords" IsComposable="true" ReturnType="Collection(DebitControlModel.GetAllDebitComputerRecords_Result)" />
+    <FunctionImport Name="GetAllDebitDeviceRecords" IsComposable="true" ReturnType="Collection(DebitControlModel.GetAllDebitDeviceRecords_Result)" />
+    <FunctionImport Name="GetAllDebitDevices" IsComposable="true" ReturnType="Collection(DebitControlModel.GetAllDebitDevices_Result)" />
+    <FunctionImport Name="GetAllDepartmentRecords" IsComposable="true" ReturnType="Collection(DebitControlModel.GetAllDepartmentRecords_Result)" />
+    <FunctionImport Name="GetAllDeviceRecords" IsComposable="true" ReturnType="Collection(DebitControlModel.GetAllDeviceRecords_Result)" />
+    <FunctionImport Name="GetAllEmployeeRecords" IsComposable="true" ReturnType="Collection(DebitControlModel.GetAllEmployeeRecords_Result)" />
+    <FunctionImport Name="GetAllLicenceRecords" IsComposable="true" ReturnType="Collection(DebitControlModel.GetAllLicenceRecords_Result)" />
+    <FunctionImport Name="GetAllMails" IsComposable="true" ReturnType="Collection(DebitControlModel.GetAllMails_Result)" />
+    <FunctionImport Name="GetComputerByID" IsComposable="true" ReturnType="Collection(DebitControlModel.GetComputerByID_Result)">
+      <Parameter Name="computerId" Mode="In" Type="Int16" />
+    </FunctionImport>
+    <FunctionImport Name="GetComputerWithLicence" IsComposable="true" ReturnType="Collection(DebitControlModel.GetComputerWithLicence_Result)" />
+    <FunctionImport Name="GetDebitComputer" IsComposable="true" ReturnType="Collection(DebitControlModel.GetDebitComputer_Result)" />
+    <FunctionImport Name="GetDebitComputerById" IsComposable="true" ReturnType="Collection(DebitControlModel.GetDebitComputerById_Result)">
+      <Parameter Name="debitComputerId" Mode="In" Type="Int16" />
+    </FunctionImport>
+    <FunctionImport Name="GetDebitDevice" IsComposable="true" ReturnType="Collection(DebitControlModel.GetDebitDevice_Result)" />
+    <FunctionImport Name="GetDebitDeviceById" IsComposable="true" ReturnType="Collection(DebitControlModel.GetDebitDeviceById_Result)">
+      <Parameter Name="debitDeviceId" Mode="In" Type="Int16" />
+    </FunctionImport>
+    <FunctionImport Name="GetDepartmentById" IsComposable="true" ReturnType="Collection(DebitControlModel.GetDepartmentById_Result)">
+      <Parameter Name="departmentId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="GetDeviceByID" IsComposable="true" ReturnType="Collection(DebitControlModel.GetDeviceByID_Result)">
+      <Parameter Name="deviceId" Mode="In" Type="Int16" />
+    </FunctionImport>
+    <FunctionImport Name="GetEmployeeById" IsComposable="true" ReturnType="Collection(DebitControlModel.GetEmployeeById_Result)">
+      <Parameter Name="employeeId" Mode="In" Type="Int16" />
+    </FunctionImport>
+    <FunctionImport Name="GetEmployeeData" IsComposable="true" ReturnType="Collection(DebitControlModel.GetEmployeeData_Result)" />
+    <FunctionImport Name="GetLicenseById" IsComposable="true" ReturnType="Collection(DebitControlModel.GetLicenseById_Result)">
+      <Parameter Name="licenceId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="GetMailById" IsComposable="true" ReturnType="Collection(DebitControlModel.GetMailById_Result)">
+      <Parameter Name="id" Mode="In" Type="Int16" />
+    </FunctionImport>
+    <FunctionImport Name="GetTerminatedLicenceById" IsComposable="true" ReturnType="Collection(DebitControlModel.GetTerminatedLicenceById_Result)">
+      <Parameter Name="licenseId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="GetTerminatedLicences" IsComposable="true" ReturnType="Collection(DebitControlModel.GetTerminatedLicences_Result)" />
+    <FunctionImport Name="AddDepartment">
+      <Parameter Name="departmentName" Mode="In" Type="String" />
+      <Parameter Name="locationName" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="CreateComputer">
+      <Parameter Name="computerBrand" Mode="In" Type="String" />
+      <Parameter Name="computerModel" Mode="In" Type="String" />
+      <Parameter Name="computerName" Mode="In" Type="String" />
+      <Parameter Name="computerSerialNumber" Mode="In" Type="String" />
+      <Parameter Name="computerLanMac" Mode="In" Type="String" />
+      <Parameter Name="computerWifiMac" Mode="In" Type="String" />
+      <Parameter Name="computerWin" Mode="In" Type="String" />
+      <Parameter Name="computerOffice" Mode="In" Type="String" />
+      <Parameter Name="computerNumber" Mode="In" Type="Int16" />
+      <Parameter Name="computerUsbStatus" Mode="In" Type="Boolean" />
+      <Parameter Name="licenceId" Mode="In" Type="Int16" />
+    </FunctionImport>
+    <FunctionImport Name="CreateDebitComputer">
+      <Parameter Name="employeeId" Mode="In" Type="Int16" />
+      <Parameter Name="computerId" Mode="In" Type="Int16" />
+      <Parameter Name="startDate" Mode="In" Type="DateTime" />
+      <Parameter Name="finishDate" Mode="In" Type="DateTime" />
+      <Parameter Name="status" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="CreateDebitDevice">
+      <Parameter Name="employeeId" Mode="In" Type="Int16" />
+      <Parameter Name="deviceId" Mode="In" Type="Int16" />
+      <Parameter Name="startDate" Mode="In" Type="DateTime" />
+      <Parameter Name="finishDate" Mode="In" Type="DateTime" />
+      <Parameter Name="status" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="CreateDevice">
+      <Parameter Name="deviceType" Mode="In" Type="String" />
+      <Parameter Name="deviceBrand" Mode="In" Type="String" />
+      <Parameter Name="deviceModel" Mode="In" Type="String" />
+      <Parameter Name="deviceSerialNumber" Mode="In" Type="String" />
+      <Parameter Name="deviceNumber" Mode="In" Type="Int16" />
+      <Parameter Name="deviceStatus" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="DeleteComputer">
+      <Parameter Name="computerId" Mode="In" Type="Int16" />
+    </FunctionImport>
+    <FunctionImport Name="DeleteDepartment">
+      <Parameter Name="departmentId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="DeleteDevice">
+      <Parameter Name="deviceId" Mode="In" Type="Int16" />
+    </FunctionImport>
+    <FunctionImport Name="DeleteLicense">
+      <Parameter Name="licenceId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="DeleteTerminatedLicence">
+      <Parameter Name="licenseId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="DisableDebitComputer">
+      <Parameter Name="debitComputerId" Mode="In" Type="Int16" />
+    </FunctionImport>
+    <FunctionImport Name="DisableDebitDevice">
+      <Parameter Name="debitDeviceId" Mode="In" Type="Int16" />
+    </FunctionImport>
+    <FunctionImport Name="DisableEmployee">
+      <Parameter Name="employeeId" Mode="In" Type="Int16" />
+    </FunctionImport>
+    <FunctionImport Name="DisableMail">
+      <Parameter Name="id" Mode="In" Type="Int16" />
+    </FunctionImport>
+    <FunctionImport Name="InsertDepartment">
+      <Parameter Name="departmentName" Mode="In" Type="String" />
+      <Parameter Name="locationName" Mode="In" Type="String" />
+      <Parameter Name="departmentStatus" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="InsertEmployee">
+      <Parameter Name="newEmployeeName" Mode="In" Type="String" />
+      <Parameter Name="newEmployeeSurname" Mode="In" Type="String" />
+      <Parameter Name="newEmployeeUsername" Mode="In" Type="String" />
+      <Parameter Name="newDepartmentId" Mode="In" Type="Byte" />
+      <Parameter Name="newMailId" Mode="In" Type="Int16" />
+    </FunctionImport>
+    <FunctionImport Name="InsertLicense">
+      <Parameter Name="licenceName" Mode="In" Type="String" />
+      <Parameter Name="licenceKey" Mode="In" Type="String" />
+      <Parameter Name="licenceMail" Mode="In" Type="String" />
+      <Parameter Name="licencePassword" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="InsertMail">
+      <Parameter Name="name" Mode="In" Type="String" />
+      <Parameter Name="password" Mode="In" Type="String" />
+      <Parameter Name="status" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="InsertTerminatedLicence">
+      <Parameter Name="licenseName" Mode="In" Type="String" />
+      <Parameter Name="obtainedFrom" Mode="In" Type="String" />
+      <Parameter Name="obtainedDate" Mode="In" Type="DateTime" />
+      <Parameter Name="email" Mode="In" Type="String" />
+      <Parameter Name="licencepassword" Mode="In" Type="String" />
+      <Parameter Name="licenceCode" Mode="In" Type="String" />
+      <Parameter Name="issuedPerson" Mode="In" Type="String" />
+      <Parameter Name="issuedDepartment" Mode="In" Type="String" />
+      <Parameter Name="licenceDuration" Mode="In" Type="Int16" />
+    </FunctionImport>
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
+    <FunctionImport Name="UpdateComputer">
+      <Parameter Name="computerId" Mode="In" Type="Int16" />
+      <Parameter Name="computerBrand" Mode="In" Type="String" />
+      <Parameter Name="computerModel" Mode="In" Type="String" />
+      <Parameter Name="computerName" Mode="In" Type="String" />
+      <Parameter Name="computerSerialNumber" Mode="In" Type="String" />
+      <Parameter Name="computerLanMac" Mode="In" Type="String" />
+      <Parameter Name="computerWifiMac" Mode="In" Type="String" />
+      <Parameter Name="computerWin" Mode="In" Type="String" />
+      <Parameter Name="computerOffice" Mode="In" Type="String" />
+      <Parameter Name="computerNumber" Mode="In" Type="Int16" />
+      <Parameter Name="computerUsbStatus" Mode="In" Type="Boolean" />
+      <Parameter Name="licenceId" Mode="In" Type="Int16" />
+    </FunctionImport>
+    <FunctionImport Name="UpdateDebitComputer">
+      <Parameter Name="debitComputerId" Mode="In" Type="Int16" />
+      <Parameter Name="employeeId" Mode="In" Type="Int16" />
+      <Parameter Name="computerId" Mode="In" Type="Int16" />
+      <Parameter Name="startDate" Mode="In" Type="DateTime" />
+      <Parameter Name="finishDate" Mode="In" Type="DateTime" />
+      <Parameter Name="status" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="UpdateDebitDevice">
+      <Parameter Name="debitDeviceId" Mode="In" Type="Int16" />
+      <Parameter Name="employeeId" Mode="In" Type="Int16" />
+      <Parameter Name="deviceId" Mode="In" Type="Int16" />
+      <Parameter Name="startDate" Mode="In" Type="DateTime" />
+      <Parameter Name="finishDate" Mode="In" Type="DateTime" />
+      <Parameter Name="status" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="UpdateDepartment">
+      <Parameter Name="departmentId" Mode="In" Type="Int32" />
+      <Parameter Name="departmentName" Mode="In" Type="String" />
+      <Parameter Name="locationName" Mode="In" Type="String" />
+      <Parameter Name="departmentStatus" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="UpdateDevice">
+      <Parameter Name="deviceId" Mode="In" Type="Int16" />
+      <Parameter Name="deviceType" Mode="In" Type="String" />
+      <Parameter Name="deviceBrand" Mode="In" Type="String" />
+      <Parameter Name="deviceModel" Mode="In" Type="String" />
+      <Parameter Name="deviceSerialNumber" Mode="In" Type="String" />
+      <Parameter Name="deviceNumber" Mode="In" Type="Int16" />
+      <Parameter Name="deviceStatus" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="UpdateEmployeeById">
+      <Parameter Name="employeeId" Mode="In" Type="Int16" />
+      <Parameter Name="newEmployeeName" Mode="In" Type="String" />
+      <Parameter Name="newEmployeeSurname" Mode="In" Type="String" />
+      <Parameter Name="newEmployeeUsername" Mode="In" Type="String" />
+      <Parameter Name="newEmployeeStatus" Mode="In" Type="Boolean" />
+      <Parameter Name="newDepartmentId" Mode="In" Type="Byte" />
+      <Parameter Name="newMailId" Mode="In" Type="Int16" />
+    </FunctionImport>
+    <FunctionImport Name="UpdateLicenceForComputer">
+      <Parameter Name="ComputerId" Mode="In" Type="Int16" />
+      <Parameter Name="LicenceId" Mode="In" Type="Int16" />
+    </FunctionImport>
+    <FunctionImport Name="UpdateLicense">
+      <Parameter Name="licenceId" Mode="In" Type="Int32" />
+      <Parameter Name="licenceName" Mode="In" Type="String" />
+      <Parameter Name="licenceKey" Mode="In" Type="String" />
+      <Parameter Name="licenceMail" Mode="In" Type="String" />
+      <Parameter Name="licencePassword" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="UpdateMail">
+      <Parameter Name="id" Mode="In" Type="Int16" />
+      <Parameter Name="name" Mode="In" Type="String" />
+      <Parameter Name="password" Mode="In" Type="String" />
+      <Parameter Name="status" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="UpdateTerminatedLicence">
+      <Parameter Name="licenseId" Mode="In" Type="Int32" />
+      <Parameter Name="licenseName" Mode="In" Type="String" />
+      <Parameter Name="obtainedFrom" Mode="In" Type="String" />
+      <Parameter Name="obtainedDate" Mode="In" Type="DateTime" />
+      <Parameter Name="email" Mode="In" Type="String" />
+      <Parameter Name="licencepassword" Mode="In" Type="String" />
+      <Parameter Name="licenceCode" Mode="In" Type="String" />
+      <Parameter Name="issuedPerson" Mode="In" Type="String" />
+      <Parameter Name="issuedDepartment" Mode="In" Type="String" />
+      <Parameter Name="licenceDuration" Mode="In" Type="Int16" />
+    </FunctionImport>
+    <FunctionImport Name="usp_Login" ReturnType="Collection(DebitControlModel.usp_Login_Result)">
+      <Parameter Name="Username" Mode="In" Type="String" />
+      <Parameter Name="Password" Mode="In" Type="String" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="usp_Login_Result">
+    <Property Type="Int32" Name="Value" Nullable="true" />
+    <Property Type="String" Name="UserRole" Nullable="true" MaxLength="50" />
+  </ComplexType>
+</Schema>

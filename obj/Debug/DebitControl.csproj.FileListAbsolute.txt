@@ -84,3 +84,7 @@ C:\Users\Sena\Desktop\DebitControl\obj\Debug\DebitControl.csproj.CoreCompileInpu
 C:\Users\Sena\Desktop\DebitControl\obj\Debug\DebitControl.csproj.CopyComplete
 C:\Users\Sena\Desktop\DebitControl\obj\Debug\DebitControl.dll
 C:\Users\Sena\Desktop\DebitControl\obj\Debug\DebitControl.pdb
+C:\Users\Sena\Desktop\DebitControl\bin\EntityFramework.dll
+C:\Users\Sena\Desktop\DebitControl\bin\EntityFramework.SqlServer.dll
+C:\Users\Sena\Desktop\DebitControl\bin\EntityFramework.xml
+C:\Users\Sena\Desktop\DebitControl\bin\EntityFramework.SqlServer.xml
