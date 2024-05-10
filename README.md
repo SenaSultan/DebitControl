@@ -31,6 +31,6 @@ Projenin Kurulumu:
 
 
 Proje Ekip Arkadaşları:
-Fatma KILINÇ
+Fatma KILINÇÇ
 Github: https://github.com/Fatmaklnc
 
