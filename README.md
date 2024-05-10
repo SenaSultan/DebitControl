@@ -32,5 +32,5 @@ Projenin Kurulumu:
 
 Proje Ekip Arkadaşları:
 Fatma KILINÇ
-Giithub: https://github.com/Fatmaklnc
+Github: https://github.com/Fatmaklnc
 
