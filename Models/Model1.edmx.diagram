@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="304b56967a1843deb4a8dac4a1d37d45" Name="Diagram1">
+        <EntityTypeShape EntityType="DebitControlModel.Administrator" Width="1.5" PointX="5.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebitControlModel.Computer" Width="1.5" PointX="3" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebitControlModel.DebitComputer" Width="1.5" PointX="5.25" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebitControlModel.DebitDevice" Width="1.5" PointX="8.25" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebitControlModel.Department" Width="1.5" PointX="0.75" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebitControlModel.Device" Width="1.5" PointX="6" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebitControlModel.Employee" Width="1.5" PointX="3" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebitControlModel.License" Width="1.5" PointX="0.75" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebitControlModel.Mail" Width="1.5" PointX="0.75" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebitControlModel.sysdiagrams" Width="1.5" PointX="7.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebitControlModel.terminatedLicence" Width="1.5" PointX="9.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebitControlModel.terminatedLicence_Log" Width="1.5" PointX="10.75" PointY="2.75" IsExpanded="true" />
+        <AssociationConnector Association="DebitControlModel.FK__Computer__licenc__5070F446" ManuallyRouted="false" />
+        <AssociationConnector Association="DebitControlModel.FK__DebitComp__compu__5535A963" ManuallyRouted="false" />
+        <AssociationConnector Association="DebitControlModel.FK__DebitComp__emplo__5441852A" ManuallyRouted="false" />
+        <AssociationConnector Association="DebitControlModel.FK__DebitDevi__devic__59FA5E80" ManuallyRouted="false" />
+        <AssociationConnector Association="DebitControlModel.FK__DebitDevi__emplo__59063A47" ManuallyRouted="false" />
+        <AssociationConnector Association="DebitControlModel.FK__Employee__depart__45F365D3" ManuallyRouted="false" />
+        <AssociationConnector Association="DebitControlModel.FK_Employee_Mail" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
