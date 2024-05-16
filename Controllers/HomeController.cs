@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DebitControl.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -10,9 +11,19 @@ namespace DebitControl.Controllers
     {
         public ActionResult Index()
         {
+            
             return View();
         }
+        DebitControlEntities entities = new DebitControlEntities();
 
-      
+        #region Personel İşlemleri
+        public ActionResult EmployeeList()
+        {
+            var model = entities.GetEmployeeData();
+            return View(model);
+        }
+        #endregion
+
+
     }
 }
