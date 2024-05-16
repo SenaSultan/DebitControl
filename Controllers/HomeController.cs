@@ -19,8 +19,26 @@ namespace DebitControl.Controllers
         #region Departman İşlemleri
         public ActionResult DepartmentList()
         {
-            var model = entities.GetAllDepartmentRecords();
+            var model = entities.GetAllDepartmentRecords();//veritab bağlantısı
             return View(model);
+        }
+
+        public ActionResult CreateDepartment()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult CreateDepartment(Department department)
+        {
+
+            string str = department.departmentName;
+            string str1 = department.locationName;
+            bool str2 = true;
+
+            entities.InsertDepartment(str, str1, str2); //departman ekleme prosedürü çağrıldı 
+            entities.SaveChanges();
+            return RedirectToAction("DepartmentList");
         }
         #endregion
 
