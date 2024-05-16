@@ -32,5 +32,15 @@ namespace DebitControl.Controllers
         }
         #endregion
 
+        #region Bilgisayar İşlemleri
+        public ActionResult ComputerList()
+        {
+            var model = entities.GetAllComputerRecords();
+            return View(model);
+        }
+
+        #endregion
+
+
     }
 }

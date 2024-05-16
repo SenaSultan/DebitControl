@@ -2202,6 +2202,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\EmployeeList.cshtml" />
     <Content Include="Views\Home\MailList.cshtml" />
+    <Content Include="Views\Home\ComputerList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
