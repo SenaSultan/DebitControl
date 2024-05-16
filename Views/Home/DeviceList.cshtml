@@ -1,0 +1,78 @@
+﻿@model IEnumerable<DebitControl.Models.GetAllDeviceRecords_Result>
+
+@{
+    ViewBag.Title = "DeviceList";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <!-- DataTales Example -->
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Tüm Cihaz Listesi</h6>
+            <a href="/Home/CreateDevice" class="btn btn-success pull-right btn-sm">Cihaz Ekle</a>
+        </div>
+
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th class="text-center">#</th>
+                            <th class="text-center">Tip</th>
+                            <th class="text-center">Marka</th>
+                            <th class="text-center">Model</th>
+                            <th class="text-center">Seri Numarası</th>
+                            <th class="text-center">Zimmet No</th>
+                            <th class="text-center">Durum</th>
+                            <th class="text-center" style="width: 240px;">İşlemler</th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <th class="text-center">#</th>
+                            <th class="text-center">Tip</th>
+                            <th class="text-center">Marka</th>
+                            <th class="text-center">Model</th>
+                            <th class="text-center">Seri Numarası</th>
+                            <th class="text-center">Zimmet No</th>
+                            <th class="text-center">Durum</th>
+                            <th class="text-center" style="width: 240px;">İşlemler</th>
+                        </tr>
+                    </tfoot>
+                    <tbody>
+                        @if (Model.Count() > 0)
+                        {
+                            int sayac = 0;
+                            foreach (var item in Model)
+                            {
+                                sayac++;
+                                <tr>
+                                    <td class="text-center"><b>@sayac</b></td>
+                                    <td class="text-center">@item.deviceType </td>
+                                    <td class="text-center">@item.deviceBrand </td>
+                                    <td class="text-center">@item.deviceModel </td>
+                                    <td class="text-center">@item.deviceSerialNumber </td>
+                                    <td class="text-center">@item.deviceNumber </td>
+                                    <td class="text-center">@item.deviceStatus </td>
+                                    <td class="text-center">
+                                        <a href="/Home/DeleteDevice?id=@item.deviceId" class="btn btn-danger btn-sm">Sil</a>
+                                        <a href="/Home/EditDevice?id=@item.deviceId" class="btn btn-primary btn-sm">Düzenle</a>
+                                    </td>
+                                </tr>
+                            }
+                        }
+                        else
+                        {
+                            <tr>
+                                <td colspan="8">Kayıt bulunamadı</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div>

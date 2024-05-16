@@ -49,6 +49,14 @@ namespace DebitControl.Controllers
 
         #endregion
 
+        #region Cihaz İşlemleri
+        public ActionResult DeviceList()
+        {
+            var model = entities.GetAllDeviceRecords();
+            return View(model);
+        }
+
+        #endregion
 
     }
 }
