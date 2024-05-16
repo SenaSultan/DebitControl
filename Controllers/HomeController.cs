@@ -16,6 +16,14 @@ namespace DebitControl.Controllers
         }
         DebitControlEntities entities = new DebitControlEntities();
 
+        #region Departman İşlemleri
+        public ActionResult DepartmentList()
+        {
+            var model = entities.GetAllDepartmentRecords();
+            return View(model);
+        }
+        #endregion
+
         #region Personel İşlemleri
         public ActionResult EmployeeList()
         {
