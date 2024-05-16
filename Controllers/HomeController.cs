@@ -24,6 +24,13 @@ namespace DebitControl.Controllers
         }
         #endregion
 
+        #region Mail İşlemleri
+        public ActionResult MailList()
+        {
+            var model = entities.GetAllMails();
+            return View(model);
+        }
+        #endregion
 
     }
 }
