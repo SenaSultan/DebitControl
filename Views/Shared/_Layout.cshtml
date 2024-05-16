@@ -41,6 +41,133 @@
                     <span>Anasayfa</span>
                 </a>
             </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="@Url.Action("DepartmentList", "Home")">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Departman Listesi</span>
+                </a>
+            </li>
+
+            <!-- Nav Item - Employee List -->
+            <li class="nav-item">
+                <a class="nav-link" href="@Url.Action("EmployeeList", "Home")">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Personel Listesi</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="@Url.Action("MailList", "Home")">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Mail Listesi</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="@Url.Action("ComputerList", "Home")">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Bilgisayar Listesi</span>
+                </a>
+            </li>
+
+
+            <li class="nav-item">
+                <a class="nav-link" href="@Url.Action("DeviceList", "Home")">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Cihaz Listesi</span>
+                </a>
+            </li>
+
+
+            <li class="nav-item">
+                <a class="nav-link" href="@Url.Action("LicenceList", "Home")">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Lisans Listesi</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="@Url.Action("TerminatedLicenceList", "Home")">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Süreli Lisans Listesi</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="@Url.Action("ActiveDebitLicenceList", "Home")">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Bilgisayar Lisans Listesi</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="@Url.Action("DebitComputerList", "Home")">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Bilgisayar Zimmet Listesi</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="@Url.Action("DebitDeviceList", "Home")">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Cihaz Zimmet Listesi</span>
+                </a>
+            </li>
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseOne"
+                   aria-expanded="true" aria-controls="collapseOne">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>Personel İşlemleri</span>
+                </a>
+                <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header"></h6>
+                        <a class="collapse-item" href="@Url.Action("ActiveEmployeeList", "Home")">Aktif Personel</a>
+                    </div>
+                </div>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwoDifferent"
+                   aria-expanded="true" aria-controls="collapseTwoDifferent">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>Rapor İşlemleri</span>
+                </a>
+                <div id="collapseTwoDifferent" class="collapse" aria-labelledby="headingTwoDifferent" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header"></h6>
+                        <a class="collapse-item" href="@Url.Action("ActiveDebitComputerList", "Home")">Aktif Bilgisayar Zimmet</a>
+                        <a class="collapse-item" href="@Url.Action("ActiveDebitDeviceList", "Home")">Aktif Cihaz Zimmet</a>
+                    </div>
+                </div>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwoDifferent1"
+                   aria-expanded="true" aria-controls="collapseTwoDifferent1">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>Zimmet İşlemleri</span>
+                </a>
+                <div id="collapseTwoDifferent1" class="collapse" aria-labelledby="headingTwoDifferent1" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header"></h6>
+                        <a class="collapse-item" href="@Url.Action("CreateDebitComputer", "Home")">Bilgisayar Zimmetleme</a>
+                        <a class="collapse-item" href="@Url.Action("CreateDebitDevice", "Home")">Cihaz Zimmetleme</a>
+                        <a class="collapse-item" href="@Url.Action("CreateDebitLicence", "Home")">Lisans Zimmetleme</a>
+                    </div>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="@Url.Action("Login", "Login")">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Çıkış Yap</span>
+                </a>
+            </li>
         </ul>
 
         <div>
