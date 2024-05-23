@@ -1,0 +1,79 @@
+﻿@model DebitControl.Models.Computer
+@{
+    DebitControl.Models.DebitControlEntities entities = new DebitControl.Models.DebitControlEntities();
+    ViewBag.Title = "CreateComputer";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<button type="submit" onclick="window.location.href = 'ComputerList';" class="btn btn-warning float-right">Geri Dön</button>
+
+<div class="row">
+
+    <form method="post" action="/Home/CreateComputer">
+
+        <div class="form-group">
+            <label for="departmentName">Marka :</label>
+            <input type="text" class="form-control" name="computerBrand" id="computerBrand" />
+        </div>
+
+        <div class="form-group">
+            <label for="locationName">Model :</label>
+            <input type="text" class="form-control" name="computerModel" id="computerModel" />
+        </div>
+
+        <div class="form-group">
+            <label for="locationName">Bilgisayar Ad :</label>
+            <input type="text" class="form-control" name="computerName" id="computerName" />
+        </div>
+
+        <div class="form-group">
+            <label for="locationName">Seri Numarası :</label>
+            <input type="text" class="form-control" name="computerSerialNumber" id="computerSerialNumber" />
+        </div>
+
+        <div class="form-group">
+            <label for="locationName">Lan Mac :</label>
+            <input type="text" class="form-control" name="computerLanMac" id="computerLanMac" />
+        </div>
+
+        <div class="form-group">
+            <label for="locationName">Wifi Mac :</label>
+            <input type="text" class="form-control" name="computerWifiMac" id="computerWifiMac" />
+        </div>
+
+
+        <div class="form-group">
+            <label for="locationName">Windows Sürümü :</label>
+            <input type="text" class="form-control" name="computerWin" id="computerWin" />
+        </div>
+
+        <div class="form-group">
+            <label for="locationName">Office Sürümü :</label>
+            <input type="text" class="form-control" name="computerOffice" id="computerOffice" />
+        </div>
+
+        <div class="form-group">
+            <label for="locationName">Zimmet Numarası :</label>
+            <input type="text" class="form-control" name="computerNumber" id="computerNumber" />
+        </div>
+
+        <div class="form-group">
+            <label for="locationName">Usb Durumu :</label>
+            <input type="text" class="form-control" name="computerUsbStatus" id="computerUsbStatus" />
+        </div>
+
+        <div class="form-group">
+            <label for="licenceId">Lisans:</label>
+            <select class="form-control" name="licenceId" id="licenceId">
+                @foreach (var licence in entities.GetAllLicenceRecords())
+                {
+                    <option value="@licence.licenceId">@licence.licenceMail</option>
+                }
+            </select>
+        </div>
+
+        <button type="submit" class="btn btn-success">Kaydet</button>
+    </form>
+
+</div>
+

@@ -1,0 +1,97 @@
+﻿@model List<DebitControl.Models.GetComputerByID_Result>
+@{
+    ViewBag.Title = "EditComputer";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    DebitControl.Models.DebitControlEntities entities = new DebitControl.Models.DebitControlEntities();
+}
+
+<button type="submit" onclick="window.location.href = 'ComputerList';" class="btn btn-warning float-right">Geri Dön</button>
+
+<div class="row">
+
+    <form method="post" action="/Home/EditComputer">
+
+        @if (Model.Count() > 0)
+        {
+            int sayac = 0;
+            foreach (var item in Model)
+            {
+                sayac++;
+
+                <input name="computerId" type="hidden" id="computerId" value="@item.computerId" />
+
+                <div class="form-group">
+                    <label for="departmentName">Marka :</label>
+                    <input type="text" class="form-control" name="computerBrand" id="computerBrand" value="@item.computerBrand" />
+                </div>
+
+                <div class="form-group">
+                    <label for="locationName">Model :</label>
+                    <input type="text" class="form-control" name="computerModel" id="computerModel" value="@item.computerModel" />
+                </div>
+
+                <div class="form-group">
+                    <label for="locationName">Bilgisayar Ad :</label>
+                    <input type="text" class="form-control" name="computerName" id="computerName" value="@item.computerName" />
+                </div>
+
+                <div class="form-group">
+                    <label for="locationName">Seri Numarası :</label>
+                    <input type="text" class="form-control" name="computerSerialNumber" id="computerSerialNumber" value="@item.computerSerialNumber" />
+                </div>
+
+                <div class="form-group">
+                    <label for="locationName">Lan Mac :</label>
+                    <input type="text" class="form-control" name="computerLanMac" id="computerLanMac" value="@item.computerLanMac" />
+                </div>
+
+                <div class="form-group">
+                    <label for="locationName">Wifi Mac :</label>
+                    <input type="text" class="form-control" name="computerWifiMac" id="computerWifiMac" value="@item.computerWifiMac" />
+                </div>
+
+
+                <div class="form-group">
+                    <label for="locationName">Windows Sürümü :</label>
+                    <input type="text" class="form-control" name="computerWin" id="computerWin" value="@item.computerWin" />
+                </div>
+
+                <div class="form-group">
+                    <label for="locationName">Office Sürümü :</label>
+                    <input type="text" class="form-control" name="computerOffice" id="computerOffice" value="@item.computerOffice" />
+                </div>
+
+                <div class="form-group">
+                    <label for="locationName">Zimmet Numarası :</label>
+                    <input type="text" class="form-control" name="computerNumber" id="computerNumber" value="@item.computerNumber" />
+                </div>
+
+                <div class="form-group">
+                    <label for="locationName">Usb Durumu :</label>
+                    <input type="text" class="form-control" name="computerUsbStatus" id="computerUsbStatus" value="@item.computerUsbStatus" />
+                </div>
+
+                <div class="form-group">
+                    <label for="licenceId">Lisans:</label>
+                    <select class="form-control" name="licenceId" id="licenceId">
+                        @foreach (var licence in entities.GetAllLicenceRecords())
+                        {
+                            <option value="@licence.licenceId">@licence.licenceMail</option>
+                        }
+                    </select>
+                </div>
+
+                <button type="submit" class="btn btn-success">Kaydet</button>
+
+            }
+        }
+        else
+        {
+
+        }
+    </form>
+
+</div>
+
+
+

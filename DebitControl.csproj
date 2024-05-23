@@ -2211,6 +2211,8 @@
     <Content Include="Views\Home\EditEmployee.cshtml" />
     <Content Include="Views\Home\CreateMail.cshtml" />
     <Content Include="Views\Home\EditMail.cshtml" />
+    <Content Include="Views\Home\CreateComputer.cshtml" />
+    <Content Include="Views\Home\EditComputer.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

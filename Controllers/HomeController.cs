@@ -204,6 +204,75 @@ namespace DebitControl.Controllers
             var model = entities.GetAllComputerRecords();
             return View(model);
         }
+        public ActionResult DeleteComputer(short? id)
+        {
+            int sonuc = entities.DeleteComputer(id);
+
+            return RedirectToAction("ComputerList");
+        }
+        public ActionResult CreateComputer()
+        {
+            return View();
+        }
+        
+        [HttpPost]
+        public ActionResult CreateComputer(Computer computer)
+        {
+
+            string str = computer.computerBrand;
+            string str1 = computer.computerModel;
+            string str2 = computer.computerName;
+            string str3 = computer.computerSerialNumber;
+            string str4 = computer.computerLanMac;
+            string str5 = computer.computerWifiMac;
+            string str6 = computer.computerWin;
+            string str7 = computer.computerOffice;
+
+            short id3 = (short)computer.computerNumber;
+
+            short id = (short)computer.licenceId;
+            bool id2 = (bool)computer.computerUsbStatus;
+
+            entities.CreateComputer(str, str1, str2, str3, str4, str5, str6, str7, id3, id2, id);
+            entities.SaveChanges();
+            return RedirectToAction("ComputerList");
+        }
+        public ActionResult EditComputer(short id)
+        {
+            var model = entities.GetComputerByID(id).ToList();
+            return View(model);
+        }
+
+        [HttpPost]
+        public ActionResult EditComputer(Computer computer)
+        {
+
+            short id4 = (short)computer.computerId;
+            string str = computer.computerBrand;
+            string str1 = computer.computerModel;
+            string str2 = computer.computerName;
+            string str3 = computer.computerSerialNumber;
+            string str4 = computer.computerLanMac;
+            string str5 = computer.computerWifiMac;
+            string str6 = computer.computerWin;
+            string str7 = computer.computerOffice;
+
+            short id3 = (short)computer.computerNumber;
+
+            short id = (short)computer.licenceId;
+            bool id2 = (bool)computer.computerUsbStatus;
+
+
+            entities.UpdateComputer(id4, str, str1, str2, str3, str4, str5, str6, str7, id3, id2, id);
+            entities.SaveChanges();
+
+
+            return RedirectToAction("ComputerList");
+        }
+
+
+
+
 
         #endregion
 
