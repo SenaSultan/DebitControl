@@ -1,0 +1,52 @@
+﻿@model List<DebitControl.Models.GetLicenseById_Result>
+@{
+    ViewBag.Title = "EditLicence";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    DebitControl.Models.DebitControlEntities entities = new DebitControl.Models.DebitControlEntities();
+}
+
+<button type="submit" onclick="window.location.href = 'LicenceList';" class="btn btn-warning float-right">Geri Dön</button>
+<div class="row">
+
+
+
+    <form method="post" action="/Home/EditLicence" enctype="multipart/form-data">
+
+        @if (Model.Count() > 0)
+        {
+            int sayac = 0;
+            foreach (var item in Model)
+            {
+                sayac++;
+
+                <input name="licenceId" type="hidden" id="licenceId" value="@item.licenceId" />
+                <div class="form-group">
+                    <label for="licenceName">Lisans Adı :</label>
+                    <input type="text" class="form-control" name="licenceName" id="licenceName" value="@item.licenceName" />
+                </div>
+                <div class="form-group">
+                    <label for="licenceKey">Lisans Keyi :</label>
+                    <input type="text" class="form-control" name="licenceKey" id="licenceKey" value="@item.licenceKey" />
+                </div>
+                <div class="form-group">
+                    <label for="licenceMail">Lisans Maili :</label>
+                    <input type="text" class="form-control" name="licenceMail" id="licenceMail" value="@item.licenceMail" />
+                </div>
+
+                <div class="form-group">
+                    <label for="licencePassword">Lisans Şifresi :</label>
+                    <input type="text" class="form-control" name="licencePassword" id="licencePassword" value="@item.licencePassword" />
+                </div>
+
+
+                <button type="submit" class="btn btn-success">Kaydet</button>
+
+            }
+        }
+        else
+        {
+
+        }
+    </form>
+
+</div>

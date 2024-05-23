@@ -1,0 +1,36 @@
+﻿@model DebitControl.Models.License
+@{
+    ViewBag.Title = "CreateLicence";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<button type="submit" onclick="window.location.href = 'LicenceList';" class="btn btn-warning float-right">Geri Dön</button>
+
+<div class="row">
+
+    <form method="post" action="/Home/CreateLicence">
+
+        <div class="form-group">
+            <label for="licenceName">Lisans Adı :</label>
+            <input type="text" class="form-control" name="licenceName" id="licenceName" />
+        </div>
+
+        <div class="form-group">
+            <label for="licenceKey">Lisans Key :</label>
+            <input type="text" class="form-control" name="licenceKey" id="licenceKey" />
+        </div>
+
+        <div class="form-group">
+            <label for="licenceMail">Lisans Mail :</label>
+            <input type="text" class="form-control" name="licenceMail" id="licenceMail" />
+        </div>
+
+        <div class="form-group">
+            <label for="licencePassword">Lisans Şifre :</label>
+            <input type="text" class="form-control" name="licencePassword" id="licencePassword" />
+        </div>
+
+        <button type="submit" class="btn btn-success">Kaydet</button>
+    </form>
+
+</div>

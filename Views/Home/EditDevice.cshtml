@@ -1,0 +1,60 @@
+﻿@model List<DebitControl.Models.GetDeviceByID_Result>
+@{
+    ViewBag.Title = "EditDevice";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<button type="submit" onclick="window.location.href = 'DeviceList';" class="btn btn-warning float-right">Geri Dön</button>
+
+<div class="row">
+
+    <form method="post" action="/Home/EditDevice">
+
+        @if (Model.Count() > 0)
+        {
+            int sayac = 0;
+            foreach (var item in Model)
+            {
+                sayac++;
+
+                <input name="deviceId" type="hidden" id="deviceId" value="@item.deviceId" />
+
+
+                <div class="form-group">
+                    <label for="locationName">Tip :</label>
+                    <input type="text" class="form-control" name="deviceType" id="deviceType" value="@item.deviceType" />
+                </div>
+
+                <div class="form-group">
+                    <label for="departmentName">Marka :</label>
+                    <input type="text" class="form-control" name="deviceBrand" id="deviceBrand" value="@item.deviceBrand" />
+                </div>
+
+                <div class="form-group">
+                    <label for="locationName">Model :</label>
+                    <input type="text" class="form-control" name="deviceModel" id="deviceModel" value="@item.deviceModel" />
+                </div>
+
+                <div class="form-group">
+                    <label for="locationName">Seri Numarası :</label>
+                    <input type="text" class="form-control" name="deviceSerialNumber" id="deviceSerialNumber" value="@item.deviceSerialNumber" />
+                </div>
+
+                <div class="form-group">
+                    <label for="locationName">Zimmet Numarası :</label>
+                    <input type="text" class="form-control" name="deviceNumber" id="deviceNumber" value="@item.deviceNumber" />
+                </div>
+
+                <button type="submit" class="btn btn-success">Kaydet</button>
+
+            }
+        }
+        else
+        {
+
+        }
+    </form>
+
+</div>
+
+

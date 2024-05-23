@@ -1,0 +1,43 @@
+﻿@model DebitControl.Models.Device
+@{
+    ViewBag.Title = "CreateDevice";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<button type="submit" onclick="window.location.href = 'DeviceList';" class="btn btn-warning float-right">Geri Dön</button>
+
+<div class="row">
+
+    <form method="post" action="/Home/CreateDevice">
+
+        <div class="form-group">
+            <label for="locationName">Tip :</label>
+            <input type="text" class="form-control" name="deviceType" id="deviceType" />
+        </div>
+
+        <div class="form-group">
+            <label for="departmentName">Marka :</label>
+            <input type="text" class="form-control" name="deviceBrand" id="deviceBrand" />
+        </div>
+
+        <div class="form-group">
+            <label for="locationName">Model :</label>
+            <input type="text" class="form-control" name="deviceModel" id="deviceModel" />
+        </div>
+
+        <div class="form-group">
+            <label for="locationName">Seri Numarası :</label>
+            <input type="text" class="form-control" name="deviceSerialNumber" id="deviceSerialNumber" />
+        </div>
+
+        <div class="form-group">
+            <label for="locationName">Zimmet Numarası :</label>
+            <input type="text" class="form-control" name="deviceNumber" id="deviceNumber" />
+        </div>
+
+        <button type="submit" class="btn btn-success">Kaydet</button>
+    </form>
+
+</div>
+
+

@@ -8,12 +8,12 @@ using System.Web.Mvc;
 namespace DebitControl.Controllers
 {
 
-   
+
     public class HomeController : Controller
     {
         public ActionResult Index()
         {
-            
+
             return View();
         }
         DebitControlEntities entities = new DebitControlEntities();
@@ -108,7 +108,7 @@ namespace DebitControl.Controllers
             return View(model);
         }
 
-        
+
         [HttpPost]
         public ActionResult EditEmployee(Employee employee)
         {
@@ -135,10 +135,10 @@ namespace DebitControl.Controllers
             return RedirectToAction("ActiveEmployeeList");
 
         }
-       
-                #endregion
 
-        
+        #endregion
+
+
 
 
 
@@ -214,7 +214,7 @@ namespace DebitControl.Controllers
         {
             return View();
         }
-        
+
         [HttpPost]
         public ActionResult CreateComputer(Computer computer)
         {
@@ -282,8 +282,135 @@ namespace DebitControl.Controllers
             var model = entities.GetAllDeviceRecords();
             return View(model);
         }
+        public ActionResult DeleteDevice(short? id)
+        {
+            int sonuc = entities.DeleteDevice(id);
+
+            return RedirectToAction("DeviceList");
+        }
+        public ActionResult CreateDevice()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult CreateDevice(Device device)
+        {
+            string str = device.deviceType;
+            string str1 = device.deviceBrand;
+            string str2 = device.deviceModel;
+            string str3 = device.deviceSerialNumber;
+
+
+            short id2 = (short)device.deviceNumber;
+            bool id3 = true;
+
+            entities.CreateDevice(str, str1, str2, str3, id2, id3);
+            entities.SaveChanges();
+            return RedirectToAction("DeviceList");
+        }
+        public ActionResult EditDevice(short id)
+        {
+            var model = entities.GetDeviceByID(id).ToList();
+            return View(model);
+        }
+
+        [HttpPost]
+        public ActionResult EditDevice(Device device)
+        {
+
+            short id = (short)device.deviceId;
+            string str = device.deviceType;
+            string str1 = device.deviceBrand;
+            string str2 = device.deviceModel;
+            string str3 = device.deviceSerialNumber;
+
+
+            short id2 = (short)device.deviceNumber;
+            bool id3 = true;
+
+            entities.UpdateDevice(id, str, str1, str2, str3, id2, id3);
+            entities.SaveChanges();
+            return RedirectToAction("DeviceList");
+
+        }
+
+        #region Lisans İşlemleri
+
+        public ActionResult LicenceList()
+        {
+            var model = entities.GetAllLicenceRecords();
+            return View(model);
+        }
+        public ActionResult DeleteLicence(short? id)
+        {
+            int sonuc = entities.DeleteLicense(id);
+
+            return RedirectToAction("LicenceList");
+
+        }
+        public ActionResult CreateLicence()
+        {
+            return View();
+        }
+        
+        [HttpPost]
+        public ActionResult CreateLicence(License licence)
+        {
+
+            string str = licence.licenceName;
+            string str1 = licence.licenceKey;
+            string str2 = licence.licenceMail;
+            string str3 = licence.licencePassword;
+
+            entities.InsertLicense(str, str1, str2, str3);
+            entities.SaveChanges();
+            return RedirectToAction("LicenceList");
+        }
+        public ActionResult EditLicence(short id)
+        {
+            var model = entities.GetLicenseById(id).ToList();
+            return View(model);
+        }
+
+        [HttpPost]
+        public ActionResult EditLicence(License licence)
+        {
+
+            short id = licence.licenceId;
+            string str = licence.licenceName;
+            string str1 = licence.licenceKey;
+            string str2 = licence.licenceMail;
+            string str3 = licence.licencePassword;
+
+
+            entities.UpdateLicense(id, str, str1, str2, str3);
+            entities.SaveChanges();
+
+            return RedirectToAction("LicenceList");
+        }
 
         #endregion
 
-    }
+
+
+
+
+
+
+
+
+
+
+
+        public ActionResult ActiveDebitLicenceList()
+        {
+            var model = entities.GetComputerWithLicence();
+            return View(model);
+        }
+
+
+        #endregion
+
+    } 
 }

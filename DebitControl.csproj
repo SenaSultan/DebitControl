@@ -2213,6 +2213,12 @@
     <Content Include="Views\Home\EditMail.cshtml" />
     <Content Include="Views\Home\CreateComputer.cshtml" />
     <Content Include="Views\Home\EditComputer.cshtml" />
+    <Content Include="Views\Home\CreateDevice.cshtml" />
+    <Content Include="Views\Home\EditDevice.cshtml" />
+    <Content Include="Views\Home\ActiveDebitLicenceList.cshtml" />
+    <Content Include="Views\Home\LicenceList.cshtml" />
+    <Content Include="Views\Home\CreateLicence.cshtml" />
+    <Content Include="Views\Home\EditLicence.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

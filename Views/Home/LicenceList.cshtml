@@ -1,0 +1,76 @@
+﻿@model IEnumerable<DebitControl.Models.GetAllLicenceRecords_Result>
+@{
+    ViewBag.Title = "LicenceList";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <!-- DataTales Example -->
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Lisans Listesi</h6>
+            <a href="/Home/CreateLicence" class="btn btn-success pull-right btn-sm">Lisans Ekle</a>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th class="text-center">#</th>
+                            <th class="text-center">Ad</th>
+                            <th class="text-center">Key</th>
+                            <th class="text-center">Mail</th>
+                            <th class="text-center">Password</th>
+                            <th class="text-center">Durum</th>
+                            <th class="text-center" style="width: 240px;">İşlemler</th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <th class="text-center">#</th>
+                            <th class="text-center">Ad</th>
+                            <th class="text-center">Key</th>
+                            <th class="text-center">Mail</th>
+                            <th class="text-center">Password</th>
+                            <th class="text-center">Durum</th>
+                            <th class="text-center" style="width: 240px;">İşlemler</th>
+                        </tr>
+                    </tfoot>
+                    <tbody>
+                        @if (Model.Count() > 0)
+                        {
+                            int sayac = 0;
+                            foreach (var item in Model)
+                            {
+                                sayac++;
+                                <tr>
+                                    <td class="text-center"><b>@sayac</b></td>
+                                    <td class="text-center">@item.licenceName </td>
+                                    <td class="text-center">@item.licenceKey </td>
+                                    <td class="text-center">@item.licenceMail </td>
+                                    <td class="text-center">@item.licencePassword </td>
+                                    <td class="text-center">@item.licenceStatus </td>
+                                    <td class="text-center">
+                                        <a href="/Home/DeleteLicence?id=@item.licenceId" class="btn btn-danger btn-sm">Sil</a>
+                                        <a href="/Home/EditLicence?id=@item.licenceId" class="btn btn-primary btn-sm">Düzenle</a>
+                                    </td>
+                                </tr>
+                            }
+                        }
+                        else
+                        {
+                            <tr>
+                                <td colspan="8">Kayıt bulunamadı</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
