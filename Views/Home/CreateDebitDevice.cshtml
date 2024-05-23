@@ -1,0 +1,48 @@
+﻿
+@{
+    DebitControl.Models.DebitControlEntities entities = new DebitControl.Models.DebitControlEntities();
+
+    ViewBag.Title = "Cihaz Zimmet Ekle";
+
+    var employee = entities.GetActiveEmployees().ToList();
+    employee.Sort((emp1, emp2) => emp1.employeeName.CompareTo(emp2.employeeName));
+
+    var device = entities.GetActiveDevices().ToList();
+    device.Sort((emp1, emp2) => emp1.deviceNumber.CompareTo(emp2.deviceNumber));
+    device.Reverse();
+}
+
+<button type="submit" onclick="window.location.href = 'ActiveDebitDeviceList';" class="btn btn-warning float-right">Geri Dön</button>
+
+<div class="row">
+
+    <form method="post" action="/Home/CreateDebitDevice">
+
+
+
+
+        <div class="form-group">
+            <label for="employeeId">Personel:</label>
+            <select class="form-control" name="employeeId" id="employeeId">
+                @foreach (var employeeItem in employee)
+                {
+                    <option value="@employeeItem.employeeId">@employeeItem.employeeName  @employeeItem.employeeSurname</option>
+                }
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="deviceId">Bilgisayar:</label>
+            <select class="form-control" name="deviceId" id="deviceId">
+                @foreach (var deviceItem in device)
+                {
+                    <option value="@deviceItem.deviceId">@deviceItem.deviceNumber</option>
+                }
+            </select>
+        </div>
+
+        <button type="submit" class="btn btn-success">Kaydet</button>
+    </form>
+
+</div>
+

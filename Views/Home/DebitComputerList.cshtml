@@ -1,0 +1,89 @@
+﻿@model IEnumerable<DebitControl.Models.GetDebitComputer_Result>
+@{
+    ViewBag.Title = "DebitComputerList";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<!-- Begin Page Content -->
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <!-- DataTales Example -->
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Tüm Bilgisayar Zimmet Listesi</h6>
+        </div>
+
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th class="text-center">#</th>
+                            <th class="text-center">Lokasyon Ad</th>
+                            <th class="text-center">Departman Ad</th>
+                            <th class="text-center">Personel Ad</th>
+                            <th class="text-center">Personel Soyad</th>
+                            <th class="text-center">Marka</th>
+                            <th class="text-center">Model</th>
+                            <th class="text-center">Zimmet No</th>
+                            <th class="text-center">Başlangıç Tarihi</th>
+                            <th class="text-center">Bitiş Tarihi</th>
+                            <th class="text-center">Zimmet Durumu</th>
+
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <th class="text-center">#</th>
+                            <th class="text-center">Lokasyon Ad</th>
+                            <th class="text-center">Departman Ad</th>
+                            <th class="text-center">Personel Ad</th>
+                            <th class="text-center">Personel Soyad</th>
+                            <th class="text-center">Marka</th>
+                            <th class="text-center">Model</th>
+                            <th class="text-center">Zimmet No</th>
+                            <th class="text-center">Başlangıç Tarihi</th>
+                            <th class="text-center">Bitiş Tarihi</th>
+                            <th class="text-center">Zimmet Durumu</th>
+                        </tr>
+                    </tfoot>
+                    <tbody>
+                        @if (Model.Count() > 0)
+                        {
+                            int sayac = 0;
+                            foreach (var item in Model)
+                            {
+                                sayac++;
+                                <tr>
+                                    <td class="text-center"><b>@sayac</b></td>
+                                    <td class="text-center">@item.locationName </td>
+                                    <td class="text-center">@item.departmentName </td>
+                                    <td class="text-center">@item.employeeName </td>
+                                    <td class="text-center">@item.employeeSurname </td>
+                                    <td class="text-center">@item.computerBrand </td>
+                                    <td class="text-center">@item.computerModel </td>
+                                    <td class="text-center">@item.computerNumber </td>
+                                    <td class="text-center">@item.debitComputerStartdate </td>
+                                    <td class="text-center">@item.debitComputerFinishdate </td>
+                                    <td class="text-center">@item.debitComputerStatus </td>
+                                </tr>
+                            }
+                        }
+                        else
+                        {
+                            <tr>
+                                <td colspan="8">Kayıt bulunamadı</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+

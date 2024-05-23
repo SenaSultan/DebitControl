@@ -2222,6 +2222,13 @@
     <Content Include="Views\Home\TerminatedLicenceList.cshtml" />
     <Content Include="Views\Home\TerminatedCreateLicence.cshtml" />
     <Content Include="Views\Home\TerminatedEditLicence.cshtml" />
+    <Content Include="Views\Home\CreateDebitLicence.cshtml" />
+    <Content Include="Views\Home\DebitComputerList.cshtml" />
+    <Content Include="Views\Home\ActiveDebitComputerList.cshtml" />
+    <Content Include="Views\Home\CreateDebitComputer.cshtml" />
+    <Content Include="Views\Home\DebitDeviceList.cshtml" />
+    <Content Include="Views\Home\ActiveDebitDeviceList.cshtml" />
+    <Content Include="Views\Home\CreateDebitDevice.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

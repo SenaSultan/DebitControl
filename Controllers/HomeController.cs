@@ -458,11 +458,7 @@ namespace DebitControl.Controllers
         #endregion
 
 
-
-
-
-
-
+        #region Bilgisayar Lisans İşlemleri
 
         public ActionResult ActiveDebitLicenceList()
         {
@@ -470,8 +466,115 @@ namespace DebitControl.Controllers
             return View(model);
         }
 
+        public ActionResult CreateDebitLicence()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult CreateDebitLicence(Computer computer)
+        {
+
+            short id = (short)computer.licenceId;
+            short id2 = (short)computer.computerId;
+
+            entities.UpdateLicenceForComputer(id2, id);
+            entities.SaveChanges();
+            return RedirectToAction("ActiveDebitLicenceList");
+        }
+
 
         #endregion
 
-    } 
+        #region Bilgisayar Zimmet İşlemleri
+        public ActionResult DebitComputerList()
+        {
+            var model = entities.GetDebitComputer();
+            return View(model);
+        }
+
+        public ActionResult ActiveDebitComputerList()
+        {
+            var model = entities.GetActiveDebitComputer();
+            return View(model);
+        }
+        #endregion
+        public ActionResult CreateDebitComputer()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult CreateDebitComputer(DebitComputer debitComputer)
+        {
+
+            DateTime now = DateTime.Now;
+            DateTime startDate = new DateTime(now.Year, now.Month, now.Day, now.Hour, now.Minute, 0);
+            DateTime? finishDate = null;
+
+            bool bo = true;
+
+            short id = (short)debitComputer.employeeId;
+            short id2 = (short)debitComputer.computerId;
+
+            entities.CreateDebitComputer(id, id2, startDate, finishDate, bo);
+            entities.SaveChanges();
+            return RedirectToAction("ActiveDebitComputerList");
+        }
+        public ActionResult DeleteDebitComputer(short? id)
+        {
+            int sonuc = entities.DisableDebitComputer(id);
+
+            return RedirectToAction("ActiveDebitComputerList");
+        }
+
+
+        #region Cihaz Zimmet İşlemleri
+       
+        public ActionResult DebitDeviceList()
+        {
+            var model = entities.GetDebitDevice();
+            return View(model);
+        }
+        
+        public ActionResult ActiveDebitDeviceList()
+        {
+            var model = entities.GetActiveDebitDevice();
+            return View(model);
+        }
+
+    
+        public ActionResult CreateDebitDevice()
+        {
+            return View();
+        }
+        
+        [HttpPost]
+        public ActionResult CreateDebitDevice(DebitDevice debitDevice)
+        {
+
+            DateTime now = DateTime.Now;
+            DateTime startDate = new DateTime(now.Year, now.Month, now.Day, now.Hour, now.Minute, 0);
+            DateTime? finishDate = null;
+
+            bool bo = true;
+
+            short id = (short)debitDevice.employeeId;
+            short id2 = (short)debitDevice.deviceId;
+
+            entities.CreateDebitDevice(id, id2, startDate, finishDate, bo);
+            entities.SaveChanges();
+            return RedirectToAction("ActiveDebitDeviceList");
+        }
+        
+        public ActionResult DeleteDebitDevice(short? id)
+        {
+            int sonuc = entities.DisableDebitDevice(id);
+
+            return RedirectToAction("ActiveDebitDeviceList");
+        }
+
+        #endregion
+
+        #endregion
+
+    }
 }
