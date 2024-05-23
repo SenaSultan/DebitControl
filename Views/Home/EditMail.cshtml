@@ -1,0 +1,42 @@
+﻿@model List<DebitControl.Models.GetMailById_Result>
+@{
+    ViewBag.Title = "EditMail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    
+}
+
+<button type="submit" onclick="window.location.href = 'MailList';" class="btn btn-warning float-right">Geri Dön</button>
+<div class="row">
+
+
+
+    <form method="post" action="/Home/EditMail" enctype="multipart/form-data">
+
+        @if (Model.Count() > 0)
+        {
+            int sayac = 0;
+            foreach (var item in Model)
+            {
+                sayac++;
+
+                <input name="maiId" type="hidden" id="maiId" value="@item.mailId" />
+                <div class="form-group">
+                    <label for="mailName">Mail Adresi :</label>
+                    <input type="text" class="form-control" name="mailName" id="mailName" value="@item.mailName" />
+                </div>
+                <div class="form-group">
+                    <label for="mailPassword">Mail Şifresi :</label>
+                    <input type="text" class="form-control" name="mailPassword" id="mailPassword" value="@item.mailPassword" />
+                </div>
+
+                <button type="submit" class="btn btn-success">Kaydet</button>
+
+            }
+        }
+        else
+        {
+
+        }
+    </form>
+</div>
+

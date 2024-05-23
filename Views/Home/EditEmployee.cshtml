@@ -1,0 +1,67 @@
+﻿@model List<DebitControl.Models.GetEmployeeById_Result>
+@{
+    ViewBag.Title = "EditEmployee";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    DebitControl.Models.DebitControlEntities entities = new DebitControl.Models.DebitControlEntities();
+}
+
+<button type="submit" onclick="window.location.href = 'ActiveEmployeeList';" class="btn btn-warning float-right">Geri Dön</button>
+<div class="row">
+
+
+
+    <form method="post" action="/Home/EditEmployee" enctype="multipart/form-data">
+
+        @if (Model.Count() > 0)
+        {
+            int sayac = 0;
+            foreach (var item in Model)
+            {
+                sayac++;
+
+                <input name="employeeId" type="hidden" id="employeeId" value="@item.employeeId" />
+                <div class="form-group">
+                    <label for="employeeName">Personel Adı :</label>
+                    <input type="text" class="form-control" name="employeeName" id="employeeName" value="@item.employeeName" />
+                </div>
+                <div class="form-group">
+                    <label for="employeeSurname">Personel Soyadı :</label>
+                    <input type="text" class="form-control" name="employeeSurname" id="employeeSurname" value="@item.employeeSurname" />
+                </div>
+                <div class="form-group">
+                    <label for="employeeUsername">Personel Kullanıcı Adı :</label>
+                    <input type="text" class="form-control" name="employeeUsername" id="employeeUsername" value="@item.employeeUsername" />
+                </div>
+
+                <div class="form-group">
+                    <label for="departmentId">Departman:</label>
+                    <select class="form-control" name="departmentId" id="departmentId">
+                        @foreach (var department in entities.GetAllDepartmentRecords())
+                        {
+                            <option value="@department.departmentId">@department.departmentName</option>
+                        }
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="mailId">Mail:</label>
+                    <select class="form-control" name="mailId" id="mailId">
+                        @foreach (var mail in entities.GetAllMails())
+                        {
+                            <option value="@mail.mailId">@mail.mailName</option>
+                        }
+                    </select>
+                </div>
+
+                <button type="submit" class="btn btn-success">Kaydet</button>
+
+            }
+        }
+        else
+        {
+
+        }
+    </form>
+
+</div>
+
