@@ -2219,6 +2219,9 @@
     <Content Include="Views\Home\LicenceList.cshtml" />
     <Content Include="Views\Home\CreateLicence.cshtml" />
     <Content Include="Views\Home\EditLicence.cshtml" />
+    <Content Include="Views\Home\TerminatedLicenceList.cshtml" />
+    <Content Include="Views\Home\TerminatedCreateLicence.cshtml" />
+    <Content Include="Views\Home\TerminatedEditLicence.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

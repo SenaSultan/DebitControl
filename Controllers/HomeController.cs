@@ -391,10 +391,71 @@ namespace DebitControl.Controllers
         }
 
         #endregion
+        #region Süreli Lisans İşlemleri
+        
+        public ActionResult TerminatedLicenceList()
+        {
+            var model = entities.GetTerminatedLicences();
+            return View(model);
+        }
+        public ActionResult TerminatedDeleteLicence(short? id)
+        {
+            int sonuc = entities.DeleteTerminatedLicence(id);
+
+            return RedirectToAction("TerminatedLicenceList");
+        }
+        public ActionResult TerminatedCreateLicence()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult TerminatedCreateLicence(terminatedLicence terminatedLicence)
+        {
+
+            string str = terminatedLicence.licenseName;
+            string str1 = terminatedLicence.obtainedFrom;
+            DateTime str2 = (DateTime)terminatedLicence.obtainedDate;
+            string str3 = terminatedLicence.email;
+            string str4 = terminatedLicence.licencepassword;
+            string str5 = terminatedLicence.licenceCode;
+            string str6 = terminatedLicence.issuedPerson;
+            string str7 = terminatedLicence.issuedDepartment;
+            short str8 = (short)terminatedLicence.licenceDuration;
+
+            entities.InsertTerminatedLicence(str, str1, str2, str3, str4, str5, str6, str7, str8);
+            entities.SaveChanges();
+            return RedirectToAction("TerminatedLicenceList");
+        }
+        public ActionResult TerminatedEditLicence(short id)
+        {
+            var model = entities.GetTerminatedLicenceById(id).ToList();
+            return View(model);
+        }
+
+        [HttpPost]
+        public ActionResult TerminatedEditLicence(terminatedLicence terminatedLicence)
+        {
+            int id = terminatedLicence.licenseId;
+            string str = terminatedLicence.licenseName;
+            string str1 = terminatedLicence.obtainedFrom;
+            DateTime str2 = (DateTime)terminatedLicence.obtainedDate;
+            string str3 = terminatedLicence.email;
+            string str4 = terminatedLicence.licencepassword;
+            string str5 = terminatedLicence.licenceCode;
+            string str6 = terminatedLicence.issuedPerson;
+            string str7 = terminatedLicence.issuedDepartment;
+            short str8 = (short)terminatedLicence.licenceDuration;
+
+            entities.UpdateTerminatedLicence(id, str, str1, str2, str3, str4, str5, str6, str7, str8);
 
 
+            entities.SaveChanges();
+
+            return RedirectToAction("TerminatedLicenceList");
+        }
 
 
+        #endregion
 
 
 

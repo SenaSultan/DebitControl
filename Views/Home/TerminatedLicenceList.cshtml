@@ -1,0 +1,103 @@
+﻿@model IEnumerable<DebitControl.Models.GetTerminatedLicences_Result>
+@{
+    ViewBag.Title = "TerminatedLicenceList";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <!-- DataTales Example -->
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Süreli Lisans Listesi</h6>
+            <a href="/Home/TerminatedCreateLicence" class="btn btn-success pull-right btn-sm">Süreli Lisans Ekle</a>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th class="text-center">#</th>
+                            <th class="text-center">Ad</th>
+                            <th class="text-center">Satın Alınan Firma</th>
+                            <th class="text-center">Satın Alma Tarihi</th>
+                            <th class="text-center">Lisans Mail</th>
+                            <th class="text-center">Lisans Şifre</th>
+                            <th class="text-center">Lisans Key</th>
+                            <th class="text-center">Verilen Personel</th>
+                            <th class="text-center">Verilen Departman</th>
+                            <th class="text-center">Lisans Süresi</th>
+                            <th class="text-center">Kalan Süresi</th>
+                            <th class="text-center" style="width: 240px;">İşlemler</th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <th class="text-center">#</th>
+                            <th class="text-center">Ad</th>
+                            <th class="text-center">Satın Alınan Firma</th>
+                            <th class="text-center">Satın Alma Tarihi</th>
+                            <th class="text-center">Lisans Mail</th>
+                            <th class="text-center">Lisans Şifre</th>
+                            <th class="text-center">Lisans Key</th>
+                            <th class="text-center">Verilen Personel</th>
+                            <th class="text-center">Verilen Departman</th>
+                            <th class="text-center">Lisans Süresi</th>
+                            <th class="text-center">Kalan Süresi</th>
+                            <th class="text-center" style="width: 240px;">İşlemler</th>
+                        </tr>
+                    </tfoot>
+                    <tbody>
+                        @if (Model.Count() > 0)
+                        {
+                            int sayac = 0;
+                            foreach (var item in Model)
+                            {
+                                sayac++;
+                                DateTime obtainedDate = (DateTime)item.obtainedDate;
+                                short licenceDurationInYears = (short)item.licenceDuration;
+
+                                DateTime expiryDate = obtainedDate.AddMonths(licenceDurationInYears);
+
+                                DateTime currentDate = DateTime.Now;
+
+                                TimeSpan remainingTime = expiryDate - currentDate;
+
+                                int remainingDays = (int)remainingTime.TotalDays;
+
+
+                                <tr>
+                                    <td class="text-center"><b>@sayac</b></td>
+                                    <td class="text-center">@item.licenseName </td>
+                                    <td class="text-center">@item.obtainedFrom </td>
+                                    <td class="text-center">@item.obtainedDate </td>
+                                    <td class="text-center">@item.email </td>
+                                    <td class="text-center">@item.licencepassword </td>
+                                    <td class="text-center">@item.licenceCode </td>
+                                    <td class="text-center">@item.issuedPerson </td>
+                                    <td class="text-center">@item.issuedDepartment </td>
+                                    <td class="text-center">@item.licenceDuration </td>
+                                    <td class="text-center">@remainingDays </td>
+                                    <td class="text-center">
+                                        <a href="/Home/TerminatedDeleteLicence?id=@item.licenseId" class="btn btn-danger btn-sm">Sil</a>
+                                        <a href="/Home/TerminatedEditLicence?id=@item.licenseId" class="btn btn-primary btn-sm">Düzenle</a>
+                                    </td>
+                                </tr>
+                            }
+                        }
+                        else
+                        {
+                            <tr>
+                                <td colspan="8">Kayıt bulunamadı</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+

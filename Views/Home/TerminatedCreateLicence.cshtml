@@ -1,0 +1,65 @@
+﻿@model DebitControl.Models.terminatedLicence
+@{
+    ViewBag.Title = "TerminatedCreateLicence";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<button type="submit" onclick="window.location.href = 'TerminatedLicenceList';" class="btn btn-warning float-right">Geri Dön</button>
+
+<div class="row">
+
+    <form method="post" action="/Home/TerminatedCreateLicence">
+
+        <div class="form-group">
+            <label for="licenseName">Lisans Adı :</label>
+            <input type="text" class="form-control" name="licenseName" id="licenseName" />
+        </div>
+
+        <div class="form-group">
+            <label for="obtainedFrom">Alınan Firma :</label>
+            <input type="text" class="form-control" name="obtainedFrom" id="obtainedFrom" />
+        </div>
+
+        <div class="form-group">
+            <label for="obtainedDate">Alınan Tarih :</label>
+            <input type="text" class="form-control" name="obtainedDate" id="obtainedDate" placeholder="YYYY-AA-GG" />
+        </div>
+
+        <div class="form-group">
+            <label for="email">Lisans Email :</label>
+            <input type="text" class="form-control" name="email" id="email" />
+        </div>
+
+
+        <div class="form-group">
+            <label for="licencepassword">Lisans Şifre :</label>
+            <input type="text" class="form-control" name="licencepassword" id="licencepassword" />
+        </div>
+
+        <div class="form-group">
+            <label for="licenceCode">Lisans Key :</label>
+            <input type="text" class="form-control" name="licenceCode" id="licenceCode" />
+        </div>
+
+
+        <div class="form-group">
+            <label for="issuedPerson">Verilen Personel :</label>
+            <input type="text" class="form-control" name="issuedPerson" id="issuedPerson" />
+        </div>
+
+
+        <div class="form-group">
+            <label for="issuedDepartment">Verilen Departman :</label>
+            <input type="text" class="form-control" name="issuedDepartment" id="issuedDepartment" />
+        </div>
+
+        <div class="form-group">
+            <label for="licenceDuration">Süre :</label>
+            <input type="text" class="form-control" name="licenceDuration" id="licenceDuration" placeholder="Ay değeri giriniz" />
+        </div>
+
+        <button type="submit" class="btn btn-success">Kaydet</button>
+    </form>
+
+</div>
+

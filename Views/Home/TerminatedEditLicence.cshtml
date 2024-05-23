@@ -1,0 +1,83 @@
+﻿@model List<DebitControl.Models.GetTerminatedLicenceById_Result>
+@{
+    ViewBag.Title = "TerminatedEditLicence";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    DebitControl.Models.DebitControlEntities entities = new DebitControl.Models.DebitControlEntities();
+
+}
+
+<button type="submit" onclick="window.location.href = 'TerminatedLicenceList';" class="btn btn-warning float-right">Geri Dön</button>
+<div class="row">
+
+
+
+    <form method="post" action="/Home/TerminatedEditLicence" enctype="multipart/form-data">
+
+        @if (Model.Count() > 0)
+        {
+            int sayac = 0;
+            foreach (var item in Model)
+            {
+                sayac++;
+
+                <input name="licenseId" type="hidden" id="licenseId" value="@item.licenseId" />
+
+
+                <div class="form-group">
+                    <label for="licenseName">Lisans Adı :</label>
+                    <input type="text" class="form-control" name="licenseName" id="licenseName" value="@item.licenseName" />
+                </div>
+
+
+                <div class="form-group">
+                    <label for="obtainedFrom">Alınan Firma :</label>
+                    <input type="text" class="form-control" name="obtainedFrom" id="obtainedFrom" value="@item.obtainedFrom" />
+                </div>
+                <div class="form-group">
+                    <label for="obtainedDate">Alınan Tarih :</label>
+                    <input type="text" class="form-control" name="obtainedDate" id="obtainedDate" value="@item.obtainedDate" />
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Lisans Email :</label>
+                    <input type="text" class="form-control" name="email" id="email" value="@item.email" />
+                </div>
+
+                <div class="form-group">
+                    <label for="licencepassword">Lisans Şifresi :</label>
+                    <input type="text" class="form-control" name="licencepassword" id="licencepassword" value="@item.licencepassword" />
+                </div>
+
+
+                <div class="form-group">
+                    <label for="licenceCode">Lisans Key :</label>
+                    <input type="text" class="form-control" name="licenceCode" id="licenceCode" value="@item.licenceCode" />
+                </div>
+
+                <div class="form-group">
+                    <label for="issuedPerson">Verilen Personel :</label>
+                    <input type="text" class="form-control" name="issuedPerson" id="issuedPerson" value="@item.issuedPerson" />
+                </div>
+
+                <div class="form-group">
+                    <label for="issuedDepartment">Verilen Departman :</label>
+                    <input type="text" class="form-control" name="issuedDepartment" id="issuedDepartment" value="@item.issuedDepartment" />
+                </div>
+
+                <div class="form-group">
+                    <label for="licenceDuration">Lisans Süresi :</label>
+                    <input type="text" class="form-control" name="licenceDuration" id="licenceDuration" value="@item.licenceDuration" />
+                </div>
+
+                <button type="submit" class="btn btn-success">Kaydet</button>
+
+            }
+        }
+        else
+        {
+
+        }
+    </form>
+
+</div>
+
