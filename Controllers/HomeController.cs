@@ -2,15 +2,96 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Routing;
 
 namespace DebitControl.Controllers
 {
+    [AttributeUsage(AttributeTargets.Method, Inherited = true, AllowMultiple = true)]
+    public class FunctionAuthorizationAttribute : AuthorizeAttribute
+    {
+        private readonly string[] allowedRoles;
+
+        public FunctionAuthorizationAttribute(params string[] roles)
+        {
+            allowedRoles = roles;
+        }
+
+        protected override bool AuthorizeCore(HttpContextBase httpContext)
+        {
+            if (httpContext.Session["Username"] != null)
+            {
+
+                foreach (var role in allowedRoles)
+                {
+                    if (httpContext.Session["UserRole"].ToString() == role)
+                    {
+                        return true;
+                    }
+                }
+            }
+
+            return false;
+        }
+
+        protected override void HandleUnauthorizedRequest(AuthorizationContext filterContext)
+        {
+            if (filterContext.HttpContext.Request.IsAjaxRequest())
+            {
+                filterContext.Result = new JsonResult
+                {
+                    JsonRequestBehavior = JsonRequestBehavior.AllowGet,
+                    Data = new { error = "Unauthorized", status = (int)HttpStatusCode.Forbidden }
+                };
+            }
+            else
+            {
+                filterContext.Result = new ViewResult
+                {
+                    ViewName = "error",
+                    ViewData = new ViewDataDictionary(new HandleErrorInfo(new Exception("Forbidden Access"), "Controller", "Action"))
+                };
+            }
+        }
+    }
 
 
+
+    public class SecurityFilterAttribute : ActionFilterAttribute
+    {
+        public override void OnActionExecuting(ActionExecutingContext filterContext)
+        {
+            if (filterContext.HttpContext.Session["Username"] == null)
+            {
+                filterContext.Result = new RedirectToRouteResult(new RouteValueDictionary(new { controller = "Login", action = "Login" }));
+            }
+
+            base.OnActionExecuting(filterContext);
+        }
+    }
+
+    [SecurityFilter]
     public class HomeController : Controller
     {
+        string adSoyad;
+        public ActionResult SecurePage()
+        {
+            // Oturum kontrolü yap
+            if (Session["Username"] != null)
+            {
+                // Kullanıcı oturum açmışsa işlemleri gerçekleştir
+                return RedirectToAction("Index", "Home");
+            }
+            else
+            {
+                // Kullanıcı oturum açmamışsa login sayfasına yönlendir
+                return RedirectToAction("Login");
+            }
+        }
+
+        [FunctionAuthorization("Admin", "Manager", "User")]
         public ActionResult Index()
         {
 
@@ -19,17 +100,19 @@ namespace DebitControl.Controllers
         DebitControlEntities entities = new DebitControlEntities();
 
         #region Departman İşlemleri
+        [FunctionAuthorization("Admin", "Manager")]
         public ActionResult DepartmentList()
         {
             var model = entities.GetAllDepartmentRecords();//veritab bağlantısı
             return View(model);
         }
 
+        [FunctionAuthorization("Admin", "Manager")]
         public ActionResult CreateDepartment()
         {
             return View();
         }
-
+        [FunctionAuthorization("Admin", "Manager")]
         [HttpPost]
         public ActionResult CreateDepartment(Department department)
         {
@@ -42,7 +125,7 @@ namespace DebitControl.Controllers
             entities.SaveChanges();
             return RedirectToAction("DepartmentList");
         }
-
+        [FunctionAuthorization("Admin", "Manager")]
         public ActionResult DeleteDepartment(short? id)
         {
             int sonuc = entities.DeleteDepartment(id);
@@ -50,12 +133,13 @@ namespace DebitControl.Controllers
             return RedirectToAction("DepartmentList");
 
         }
+        [FunctionAuthorization("Admin", "Manager")]
         public ActionResult EditDepartment(short id)
         {
             var model = entities.GetDepartmentById(id).ToList();
             return View(model);
         }
-
+        [FunctionAuthorization("Admin", "Manager")]
         [HttpPost]
         public ActionResult EditDepartment(Department department)
         {
@@ -78,16 +162,18 @@ namespace DebitControl.Controllers
 
 
         #region Personel İşlemleri
+        [FunctionAuthorization("Admin", "Manager")]
         public ActionResult EmployeeList()
         {
             var model = entities.GetEmployeeData();
             return View(model);
         }
+        [FunctionAuthorization("Admin", "Manager")]
         public ActionResult CreateEmployee()
         {
             return View();
         }
-
+        [FunctionAuthorization("Admin", "Manager")]
         [HttpPost]
         public ActionResult CreateEmployee(Employee employee)
         {
@@ -102,13 +188,14 @@ namespace DebitControl.Controllers
             entities.SaveChanges();
             return RedirectToAction("ActiveEmployeeList");
         }
+        [FunctionAuthorization("Admin", "Manager")]
         public ActionResult EditEmployee(short id)
         {
             var model = entities.GetEmployeeById(id).ToList();
             return View(model);
         }
 
-
+        [FunctionAuthorization("Admin", "Manager")]
         [HttpPost]
         public ActionResult EditEmployee(Employee employee)
         {
@@ -127,7 +214,7 @@ namespace DebitControl.Controllers
 
             return RedirectToAction("ActiveEmployeeList");
         }
-
+        [FunctionAuthorization("Admin", "Manager")]
         public ActionResult DeleteEmployee(short? id)
         {
             int sonuc = entities.DisableEmployee(id);
@@ -136,6 +223,13 @@ namespace DebitControl.Controllers
 
         }
 
+        [FunctionAuthorization("Manager", "Admin")]
+        public ActionResult ActiveEmployeeList()
+        {
+            var model = entities.GetActiveEmployees();
+            return View(model);
+
+        }
         #endregion
 
 
@@ -143,11 +237,13 @@ namespace DebitControl.Controllers
 
 
         #region Mail İşlemleri
+        [FunctionAuthorization("Admin", "Manager")]
         public ActionResult MailList()
         {
             var model = entities.GetAllMails();
             return View(model);
         }
+        [FunctionAuthorization("Admin", "Manager")]
         public ActionResult DeleteMail(short? id)
         {
             int sonuc = entities.DisableMail(id);
@@ -155,12 +251,12 @@ namespace DebitControl.Controllers
             return RedirectToAction("MailList");
 
         }
-
+        [FunctionAuthorization("Admin", "Manager")]
         public ActionResult CreateMail()
         {
             return View();
         }
-
+        [FunctionAuthorization("Admin", "Manager")]
         [HttpPost]
         public ActionResult CreateMail(Mail mail)
         {
@@ -174,13 +270,13 @@ namespace DebitControl.Controllers
             entities.SaveChanges();
             return RedirectToAction("MailList");
         }
-
+        [FunctionAuthorization("Admin", "Manager")]
         public ActionResult EditMail(short id)
         {
             var model = entities.GetMailById(id).ToList();
             return View(model);
         }
-
+        [FunctionAuthorization("Admin", "Manager")]
         [HttpPost]
         public ActionResult EditMail(Mail mail)
         {
@@ -199,22 +295,25 @@ namespace DebitControl.Controllers
         #endregion
 
         #region Bilgisayar İşlemleri
+        [FunctionAuthorization("Admin", "Manager")]
         public ActionResult ComputerList()
         {
             var model = entities.GetAllComputerRecords();
             return View(model);
         }
+        [FunctionAuthorization("Admin", "Manager")]
         public ActionResult DeleteComputer(short? id)
         {
             int sonuc = entities.DeleteComputer(id);
 
             return RedirectToAction("ComputerList");
         }
+        [FunctionAuthorization("Admin", "Manager")]
         public ActionResult CreateComputer()
         {
             return View();
         }
-
+        [FunctionAuthorization("Admin", "Manager")]
         [HttpPost]
         public ActionResult CreateComputer(Computer computer)
         {
@@ -237,12 +336,17 @@ namespace DebitControl.Controllers
             entities.SaveChanges();
             return RedirectToAction("ComputerList");
         }
+        [FunctionAuthorization("Admin", "Manager")]
+
         public ActionResult EditComputer(short id)
         {
             var model = entities.GetComputerByID(id).ToList();
             return View(model);
         }
 
+
+
+        [FunctionAuthorization("Admin", "Manager")]
         [HttpPost]
         public ActionResult EditComputer(Computer computer)
         {
@@ -277,22 +381,25 @@ namespace DebitControl.Controllers
         #endregion
 
         #region Cihaz İşlemleri
+        [FunctionAuthorization("Admin", "Manager")]
         public ActionResult DeviceList()
         {
             var model = entities.GetAllDeviceRecords();
             return View(model);
         }
+        [FunctionAuthorization("Admin", "Manager")]
         public ActionResult DeleteDevice(short? id)
         {
             int sonuc = entities.DeleteDevice(id);
 
             return RedirectToAction("DeviceList");
         }
+        [FunctionAuthorization("Admin", "Manager")]
         public ActionResult CreateDevice()
         {
             return View();
         }
-
+        [FunctionAuthorization("Admin", "Manager")]
         [HttpPost]
         public ActionResult CreateDevice(Device device)
         {
@@ -309,12 +416,13 @@ namespace DebitControl.Controllers
             entities.SaveChanges();
             return RedirectToAction("DeviceList");
         }
+        [FunctionAuthorization("Admin", "Manager")]
         public ActionResult EditDevice(short id)
         {
             var model = entities.GetDeviceByID(id).ToList();
             return View(model);
         }
-
+        [FunctionAuthorization("Admin", "Manager")]
         [HttpPost]
         public ActionResult EditDevice(Device device)
         {
@@ -336,12 +444,13 @@ namespace DebitControl.Controllers
         }
 
         #region Lisans İşlemleri
-
+        [FunctionAuthorization("Admin", "Manager")]
         public ActionResult LicenceList()
         {
             var model = entities.GetAllLicenceRecords();
             return View(model);
         }
+        [FunctionAuthorization("Admin", "Manager")]
         public ActionResult DeleteLicence(short? id)
         {
             int sonuc = entities.DeleteLicense(id);
@@ -349,11 +458,12 @@ namespace DebitControl.Controllers
             return RedirectToAction("LicenceList");
 
         }
+        [FunctionAuthorization("Admin", "Manager")]
         public ActionResult CreateLicence()
         {
             return View();
         }
-        
+        [FunctionAuthorization("Admin", "Manager")]
         [HttpPost]
         public ActionResult CreateLicence(License licence)
         {
@@ -367,12 +477,13 @@ namespace DebitControl.Controllers
             entities.SaveChanges();
             return RedirectToAction("LicenceList");
         }
+        [FunctionAuthorization("Admin", "Manager")]
         public ActionResult EditLicence(short id)
         {
             var model = entities.GetLicenseById(id).ToList();
             return View(model);
         }
-
+        [FunctionAuthorization("Admin", "Manager")]
         [HttpPost]
         public ActionResult EditLicence(License licence)
         {
@@ -392,22 +503,26 @@ namespace DebitControl.Controllers
 
         #endregion
         #region Süreli Lisans İşlemleri
-        
+        [FunctionAuthorization("Admin", "Manager")]
         public ActionResult TerminatedLicenceList()
         {
             var model = entities.GetTerminatedLicences();
             return View(model);
+
         }
+        [FunctionAuthorization("Admin", "Manager")]
         public ActionResult TerminatedDeleteLicence(short? id)
         {
             int sonuc = entities.DeleteTerminatedLicence(id);
 
             return RedirectToAction("TerminatedLicenceList");
         }
+        [FunctionAuthorization("Admin", "Manager")]
         public ActionResult TerminatedCreateLicence()
         {
             return View();
         }
+        [FunctionAuthorization("Admin", "Manager")]
         [HttpPost]
         public ActionResult TerminatedCreateLicence(terminatedLicence terminatedLicence)
         {
@@ -426,12 +541,13 @@ namespace DebitControl.Controllers
             entities.SaveChanges();
             return RedirectToAction("TerminatedLicenceList");
         }
+        [FunctionAuthorization("Admin", "Manager")]
         public ActionResult TerminatedEditLicence(short id)
         {
             var model = entities.GetTerminatedLicenceById(id).ToList();
             return View(model);
         }
-
+        [FunctionAuthorization("Admin", "Manager")]
         [HttpPost]
         public ActionResult TerminatedEditLicence(terminatedLicence terminatedLicence)
         {
@@ -459,17 +575,19 @@ namespace DebitControl.Controllers
 
 
         #region Bilgisayar Lisans İşlemleri
-
+        [FunctionAuthorization("Admin", "Manager")]
         public ActionResult ActiveDebitLicenceList()
         {
             var model = entities.GetComputerWithLicence();
             return View(model);
         }
-
+        [FunctionAuthorization("Admin", "Manager")]
         public ActionResult CreateDebitLicence()
         {
             return View();
+
         }
+        [FunctionAuthorization("Admin", "Manager")]
         [HttpPost]
         public ActionResult CreateDebitLicence(Computer computer)
         {
@@ -486,22 +604,25 @@ namespace DebitControl.Controllers
         #endregion
 
         #region Bilgisayar Zimmet İşlemleri
+        [FunctionAuthorization("Admin", "Manager")]
         public ActionResult DebitComputerList()
         {
             var model = entities.GetDebitComputer();
             return View(model);
         }
-
+        [FunctionAuthorization("Admin", "Manager")]
         public ActionResult ActiveDebitComputerList()
         {
             var model = entities.GetActiveDebitComputer();
             return View(model);
         }
         #endregion
+        [FunctionAuthorization("Admin", "Manager")]
         public ActionResult CreateDebitComputer()
         {
             return View();
         }
+        [FunctionAuthorization("Admin", "Manager")]
         [HttpPost]
         public ActionResult CreateDebitComputer(DebitComputer debitComputer)
         {
@@ -519,6 +640,7 @@ namespace DebitControl.Controllers
             entities.SaveChanges();
             return RedirectToAction("ActiveDebitComputerList");
         }
+        [FunctionAuthorization("Admin", "Manager")]
         public ActionResult DeleteDebitComputer(short? id)
         {
             int sonuc = entities.DisableDebitComputer(id);
@@ -528,25 +650,26 @@ namespace DebitControl.Controllers
 
 
         #region Cihaz Zimmet İşlemleri
-       
+        [FunctionAuthorization("Admin", "Manager")]
         public ActionResult DebitDeviceList()
         {
             var model = entities.GetDebitDevice();
             return View(model);
         }
-        
+        [FunctionAuthorization("Admin", "Manager")]
         public ActionResult ActiveDebitDeviceList()
         {
             var model = entities.GetActiveDebitDevice();
             return View(model);
         }
 
-    
+        [FunctionAuthorization("Admin", "Manager")]
         public ActionResult CreateDebitDevice()
         {
             return View();
         }
-        
+        [FunctionAuthorization("Admin", "Manager")]
+
         [HttpPost]
         public ActionResult CreateDebitDevice(DebitDevice debitDevice)
         {
@@ -564,7 +687,7 @@ namespace DebitControl.Controllers
             entities.SaveChanges();
             return RedirectToAction("ActiveDebitDeviceList");
         }
-        
+        [FunctionAuthorization("Admin", "Manager")]
         public ActionResult DeleteDebitDevice(short? id)
         {
             int sonuc = entities.DisableDebitDevice(id);
