@@ -129,6 +129,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -295,9 +296,14 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
+    <Content Include="Content\logincss\bootstrap.min.css" />
+    <Content Include="Content\logincss\owl.carousel.min.css" />
+    <Content Include="Content\logincss\style.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="images\bg_1.jpg" />
+    <Content Include="images\undraw_remotely_2j6y.svg" />
     <Content Include="Models\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Model1.Context.cs</LastGenOutput>
@@ -321,6 +327,8 @@
     <Content Include="Models\Model1.edmx.diagram">
       <DependentUpon>Model1.edmx</DependentUpon>
     </Content>
+    <Content Include="images\.DS_Store" />
+    <Content Include="Content\logincss\bootstrap.min.css.map" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -331,6 +339,11 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\loginjs\bootstrap.min.js" />
+    <Content Include="Scripts\loginjs\jquery-3.3.1.min.js" />
+    <Content Include="Scripts\loginjs\main.js" />
+    <Content Include="Scripts\loginjs\owl.carousel.min.js" />
+    <Content Include="Scripts\loginjs\popper.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Template\css\sb-admin-2.css" />
     <Content Include="Template\css\sb-admin-2.min.css" />
@@ -2229,6 +2242,8 @@
     <Content Include="Views\Home\DebitDeviceList.cshtml" />
     <Content Include="Views\Home\ActiveDebitDeviceList.cshtml" />
     <Content Include="Views\Home\CreateDebitDevice.cshtml" />
+    <Content Include="Views\Shared\ViewPage1.cshtml" />
+    <Content Include="Views\Login\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
